@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Calculo de Fator de Potencia</string>
+    <string-array name="potencia_array">
+        <item>W</item>
+        <item>KW</item>
+        <item>CV</item>
+        <item>HP</item>
+    </string-array>
+</resources>
