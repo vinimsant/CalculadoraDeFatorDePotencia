@@ -9,12 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_phi_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CalculoDeFatorDePotencia">
-        <activity android:name=".FatorDePotencia"
+        <activity android:name=".QuedaDeTensao"></activity>
+        <activity
+            android:name=".FatorDePotencia"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden"></activity>
-        <activity android:name=".CalculadoraDeDesequelibrioDeTensao"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".CalculadoraDeDesequelibrioDeTensao"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden"/>
+            android:windowSoftInputMode="stateHidden" />
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
