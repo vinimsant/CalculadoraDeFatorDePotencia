@@ -75,8 +75,10 @@ public class CalculadoraDeDesequelibrioDeTensao extends AppCompatActivity {
                    CalcDesequilibrio();
                    DecimalFormat df = new DecimalFormat("0.00");
                    result.setText("\nDesequilibrio de Tensâo de " +
-                           ""+df.format(desequilibrio)+"%\n"+"De acordo com a resolução " +
-                           "da ANEEL o desequilibrio maximo aceitavel é de 2%!");
+                           ""+df.format(desequilibrio)+"%\n"+"De acordo com o PRODIST " +
+                           "Módulo 8 " +
+                           "da ANEEL o desequilibrio maximo aceitavel é de 3% para tensões menores ou iguais a 1.000 " +
+                           "Volts e de 2% para tensões entre 1.000 e 230.000 Volts!");
                    EsconderTeclado();
                    /*interstitialAd.loadAd(new AdRequest.Builder().build());
                     if (interstitialAd.isLoaded()){

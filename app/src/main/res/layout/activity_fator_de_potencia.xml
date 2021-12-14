@@ -52,7 +52,7 @@
                 android:layout_height="50dp"
                 android:ems="10"
                 android:hint="Potência Ativa em Watts"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 android:textColor="#011689"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
