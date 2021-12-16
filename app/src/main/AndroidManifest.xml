@@ -10,13 +10,13 @@
         android:roundIcon="@mipmap/ic_launcher_phi_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CalculoDeFatorDePotencia">
-        <activity android:name=".QuedaDeTensao"></activity>
+        <activity android:name=".activity.QuedaDeTensao"></activity>
         <activity
-            android:name=".FatorDePotencia"
+            android:name=".activity.FatorDePotencia"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".CalculadoraDeDesequelibrioDeTensao"
+            android:name=".activity.CalculadoraDeDesequelibrioDeTensao"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
 
@@ -25,7 +25,7 @@
             android:value="ca-app-pub-2398950190237031~6700113489" />
 
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden">
             <intent-filter>

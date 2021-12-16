@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".QuedaDeTensao">
+    tools:context=".activity.QuedaDeTensao">
 
     <Button
         android:id="@+id/button"
@@ -24,41 +24,22 @@
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Spinner
-        android:id="@+id/sp_mono_ou_tri"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteY="83dp" />
-
-    <Spinner
-        android:id="@+id/sp_queda_ou_secao"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="492dp" />
-
-    <Spinner
-        android:id="@+id/sp_tipo_de_condutor"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="-49dp"
-        tools:layout_editor_absoluteY="387dp" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="251dp"
-        android:layout_height="65dp"
-        android:ems="10"
-        android:hint="Cumprimento do Cabo"
-        android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="23dp"
-        tools:layout_editor_absoluteY="125dp" />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.50121653" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button">
+
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
