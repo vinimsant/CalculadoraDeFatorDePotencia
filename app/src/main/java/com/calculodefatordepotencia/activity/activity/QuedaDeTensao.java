@@ -1,4 +1,4 @@
-package com.calculodefatordepotencia.activity;
+package com.calculodefatordepotencia.activity.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
