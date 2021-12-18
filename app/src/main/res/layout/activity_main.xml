@@ -50,6 +50,13 @@
             android:layout_height="wrap_content"
             android:onClick="ChamarDeseq"
             android:text="Calcular Desequilíbrio de Tensão" />
+
+        <Button
+            android:id="@+id/btnQuedaDeTensao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="ChamarQueda"
+            android:text="Button" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

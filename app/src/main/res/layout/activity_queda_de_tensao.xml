@@ -9,7 +9,8 @@
     <Button
         android:id="@+id/btnMono"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
+        android:onClick="ExibirFragmentMono"
         android:text="Mono ou Bifásico"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,7 +20,8 @@
         android:id="@+id/btnTrifasico"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Ttifásico"
+        android:onClick="ExibirFragmentTrifasico"
+        android:text="Trifásico"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="parent" />

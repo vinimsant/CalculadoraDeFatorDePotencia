@@ -125,5 +125,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(cFP);
     }
 
+    public void ChamarQueda(View v){
+        Intent intent = new Intent(this, QuedaDeTensao.class);
+        startActivity(intent);
+    }
 
 }
