@@ -1,5 +1,6 @@
 package com.calculodefatordepotencia.activity.fragmenty;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,8 +8,18 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.content.Context;
 
 import com.calculodefatordepotencia.R;
+
+import static androidx.core.content.ContextCompat.getSystemService;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +27,16 @@ import com.calculodefatordepotencia.R;
  * create an instance of this fragment.
  */
 public class MonoFragment extends Fragment {
+
+    private Spinner tipoDeCondutor;
+    private Spinner tipoDeCalculo;
+    private EditText txtQuedaTensao;
+    private EditText txtFatorDePotencia;
+    private EditText txtCorrente;
+    private EditText txtBitola;
+    private EditText txtComprimento;
+    private TextView txtResultado;
+    private Button limpar;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -61,6 +82,85 @@ public class MonoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_mono, container, false);
+        View view = inflater.inflate(R.layout.fragment_mono, container, false);
+
+        //Recuperando componetes do layot
+        txtQuedaTensao = (EditText)view.findViewById(R.id.txtQuedaDeTensao);
+        txtBitola = (EditText)view.findViewById(R.id.txtBitolaCondutor);
+        txtComprimento = (EditText)view.findViewById(R.id.txtComprimentoCondutor);
+        txtCorrente = (EditText)view.findViewById(R.id.txtCorrente);
+        txtFatorDePotencia = (EditText)view.findViewById(R.id.txtFatorDePotenciaQueda);
+        txtResultado = (TextView)view.findViewById(R.id.txtResultadoQueda);
+        limpar = (Button)view.findViewById(R.id.btnLimparQueda);
+
+        //Configuração do spiner tipo de condutor
+        ArrayAdapter<CharSequence> arrayAdapter = ArrayAdapter.createFromResource(getContext(),
+                R.array.tipo_de_condutor, android.R.layout.simple_spinner_item);
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        tipoDeCondutor = (Spinner)view.findViewById(R.id.spnTipoDeCondutor);
+        tipoDeCondutor.setAdapter(arrayAdapter);
+        tipoDeCondutor.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        // Configuração do spiner tipo de calculo - por queda ou por bitola
+        ArrayAdapter<CharSequence> arrayAdapter1 = ArrayAdapter.createFromResource(getContext(),
+                R.array.tipo_de_calculo_de_queda, android.R.layout.simple_spinner_item);
+        arrayAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        tipoDeCalculo = (Spinner)view.findViewById(R.id.spnCalcQuedaOuBitola);
+        tipoDeCalculo.setAdapter(arrayAdapter1);
+        tipoDeCalculo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                //escreva os comandos aqui
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        limpar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LimparTelaQueda();
+            }
+        });
+
+        return view;
     }
+
+    public void LimparTelaQueda(){
+
+        txtResultado.setText("");
+        txtFatorDePotencia.setText("");
+        txtCorrente.setText("");
+        txtComprimento.setText("");
+        txtBitola.setText("");
+        txtQuedaTensao.setText("");
+        EsconderTeclado();
+
+    }
+
+    public void EsconderTeclado(){
+
+        ((InputMethodManager)getContext().getSystemService(Context.INPUT_METHOD_SERVICE))
+                .hideSoftInputFromWindow(txtResultado.getWindowToken(), 0);
+
+
+
+    }
+
+
+
 }

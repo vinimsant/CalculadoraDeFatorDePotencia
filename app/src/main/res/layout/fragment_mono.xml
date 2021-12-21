@@ -1,17 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.fragmenty.MonoFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="fragment mono"
-        android:textAlignment="center"
-        android:textSize="30sp" />
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.50" />
+
+        <Spinner
+            android:id="@+id/spnTipoDeCondutor"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spnCalcQuedaOuBitola" />
+
+        <Spinner
+            android:id="@+id/spnCalcQuedaOuBitola"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/txtComprimentoCondutor"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="Comprimento do Condutor em Metros"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtBitolaCondutor" />
+
+        <EditText
+            android:id="@+id/txtBitolaCondutor"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="Bitola do Condutor"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtCorrente" />
+
+        <EditText
+            android:id="@+id/txtCorrente"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="Corrente"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtFatorDePotenciaQueda" />
+
+        <EditText
+            android:id="@+id/txtFatorDePotenciaQueda"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="Fator de Potência"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtQuedaDeTensao" />
+
+        <EditText
+            android:id="@+id/txtQuedaDeTensao"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="Queda de Tensão"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spnTipoDeCondutor" />
+
+        <Button
+            android:id="@+id/btnCalcularQueda"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="30dp"
+            android:text="Calcular"
+            app:layout_constraintEnd_toStartOf="@+id/guideline7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtComprimentoCondutor" />
+
+        <Button
+            android:id="@+id/btnLimparQueda"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="30dp"
+            android:text="Limpar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline7"
+            app:layout_constraintTop_toBottomOf="@+id/txtComprimentoCondutor" />
+
+        <TextView
+            android:id="@+id/txtResultadoQueda"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:text="Resutado"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnCalcularQueda" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

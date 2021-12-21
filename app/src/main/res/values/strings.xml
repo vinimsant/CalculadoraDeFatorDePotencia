@@ -6,6 +6,14 @@
         <item>CV</item>
         <item>HP</item>
     </string-array>
+    <string-array name="tipo_de_condutor">
+        <item>Condutor de Cobre</item>
+        <item>Condutor de Aluminio</item>
+    </string-array>
+    <string-array name="tipo_de_calculo_de_queda">
+        <item>Calcular Bitola do Condutor</item>
+        <item>Calcular Queda de Tensão</item>
+    </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
