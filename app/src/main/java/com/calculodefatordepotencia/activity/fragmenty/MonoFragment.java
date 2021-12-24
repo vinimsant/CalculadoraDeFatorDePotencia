@@ -14,6 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.content.Context;
 
@@ -121,6 +122,16 @@ public class MonoFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 //escreva os comandos aqui
+               switch (position){
+                   case 0:
+                       txtBitola.setEnabled(false);
+                       txtQuedaTensao.setEnabled(true);
+                       break;
+                   case 1:
+                       txtQuedaTensao.setEnabled(false);
+                       txtBitola.setEnabled(true);
+                       break;
+               }
 
             }
 
