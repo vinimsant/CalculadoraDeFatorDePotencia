@@ -1,6 +1,7 @@
 package com.calculodefatordepotencia.activity.fragmenty;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -17,8 +18,11 @@ import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.content.Context;
+import android.widget.Toast;
 
 import com.calculodefatordepotencia.R;
+
+import java.text.DecimalFormat;
 
 import static androidx.core.content.ContextCompat.getSystemService;
 
@@ -38,6 +42,11 @@ public class MonoFragment extends Fragment {
     private EditText txtComprimento;
     private TextView txtResultado;
     private Button limpar;
+    private Button calcular;
+    // verificador tipo de condutor, 0 = cobre 0,0172, 1 alumino 0,0282
+    private double resistividadeDoFio = 0.0172;
+    // verificador do spiner queda ou bitola caso variavel receba 0 selecionado queda caso receba 1 bitola selecionada
+    private int spinerQueda = 0;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -93,6 +102,7 @@ public class MonoFragment extends Fragment {
         txtFatorDePotencia = (EditText)view.findViewById(R.id.txtFatorDePotenciaQueda);
         txtResultado = (TextView)view.findViewById(R.id.txtResultadoQueda);
         limpar = (Button)view.findViewById(R.id.btnLimparQueda);
+        calcular = (Button)view.findViewById(R.id.btnCalcularQueda);
 
         //Configuração do spiner tipo de condutor
         ArrayAdapter<CharSequence> arrayAdapter = ArrayAdapter.createFromResource(getContext(),
@@ -103,6 +113,14 @@ public class MonoFragment extends Fragment {
         tipoDeCondutor.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+               switch (position){
+                   case 0:
+                       resistividadeDoFio = 0.0172;
+                       break;
+                   case 1:
+                       resistividadeDoFio = 0.0282;
+                       break;
+               }
 
             }
 
@@ -124,12 +142,16 @@ public class MonoFragment extends Fragment {
                 //escreva os comandos aqui
                switch (position){
                    case 0:
+                       spinerQueda = 0;
                        txtBitola.setEnabled(false);
                        txtQuedaTensao.setEnabled(true);
+                       LimparTelaQueda();
                        break;
                    case 1:
+                       spinerQueda = 1;
                        txtQuedaTensao.setEnabled(false);
                        txtBitola.setEnabled(true);
+                       LimparTelaQueda();
                        break;
                }
 
@@ -145,6 +167,13 @@ public class MonoFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 LimparTelaQueda();
+            }
+        });
+
+        calcular.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Calcular();
             }
         });
 
@@ -170,6 +199,77 @@ public class MonoFragment extends Fragment {
 
 
 
+    }
+
+    public void AbrirManual(){
+        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+        
+
+    }
+
+    public void Calcular(){
+        // calcular bitola
+        if (spinerQueda == 0){
+            double comprimento = 0;
+            double bitola = 0;
+            double queda = 0;
+            double corrente = 0;
+            double fatorDePotencia = 0;
+
+            //verificar se campos estao preenchidos
+
+            if (txtFatorDePotencia.getText().toString().trim().length() != 0){
+                if (txtCorrente.getText().toString().trim().length() != 0){
+                    if (txtQuedaTensao.getText().toString().trim().length() != 0){
+                        if (txtComprimento.getText().toString().trim().length() != 0){
+                            comprimento = Double.parseDouble(txtComprimento.getText().toString());
+                            queda = Double.parseDouble(txtQuedaTensao.getText().toString());
+                            corrente = Double.parseDouble(txtCorrente.getText().toString());
+                            fatorDePotencia = Double.parseDouble(txtFatorDePotencia.getText().toString());
+
+                            bitola = 2*(resistividadeDoFio*comprimento/queda)*corrente*fatorDePotencia;
+
+                            DecimalFormat result = new DecimalFormat("0.00");
+                            txtResultado.setText("Necessário um " +
+                                    "condutor com aproximadamente " +
+                                    "" +result.format(bitola) + "mm²!");
+                        }
+                    }
+                }
+            }
+
+            EsconderTeclado();
+
+        // calcular queda
+        }else if (spinerQueda == 1){
+            double comprimento = 0;
+            double quedaDeTensao = 0;
+            double bitola = 0;
+            double corrente = 0;
+            double fatorDePotencia = 0;
+
+            //verificar se campos estao preenchidos
+
+            if (txtFatorDePotencia.getText().toString().trim().length() != 0){
+                if (txtCorrente.getText().toString().trim().length() != 0){
+                    if (txtBitola.getText().toString().trim().length() != 0){
+                        if (txtComprimento.getText().toString().trim().length() != 0){
+                            comprimento = Double.parseDouble(txtComprimento.getText().toString());
+                            bitola = Double.parseDouble(txtBitola.getText().toString());
+                            corrente = Double.parseDouble(txtCorrente.getText().toString());
+                            fatorDePotencia = Double.parseDouble(txtFatorDePotencia.getText().toString());
+
+                            quedaDeTensao = 2*(resistividadeDoFio*comprimento/bitola)*corrente*fatorDePotencia;
+
+                            DecimalFormat result = new DecimalFormat("0.00");
+                            txtResultado.setText(result.format(quedaDeTensao) + " Volts de queda!");
+                        }
+                    }
+                }
+            }
+
+            EsconderTeclado();
+        }
     }
 
 
