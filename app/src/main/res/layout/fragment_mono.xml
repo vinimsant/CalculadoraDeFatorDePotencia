@@ -11,8 +11,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:onClick="Calcular">
+        android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline7"
@@ -45,10 +44,12 @@
             android:layout_marginTop="10dp"
             android:ems="10"
             android:hint="Comprimento do Condutor em Metros"
+            android:background="@drawable/custon_edit_text"
             android:inputType="numberDecimal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtBitolaCondutor" />
+
 
         <EditText
             android:id="@+id/txtBitolaCondutor"
