@@ -27,8 +27,13 @@ public class QuedaDeTensao extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_queda_de_tensao);
-
         getSupportActionBar().setElevation(0);
+
+        //colocar gradiente no action bar
+        androidx.appcompat.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.gradient));
+
+
 
 
 
