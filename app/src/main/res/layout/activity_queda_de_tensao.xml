@@ -6,31 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".activity.activity.QuedaDeTensao">
 
-    <Button
-        android:id="@+id/btnMono"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:elevation="0dp"
-        android:insetTop="2dp"
-        android:insetBottom="0dp"
-        android:onClick="ExibirFragmentMono"
-        android:text="Mono ou Bifásico"
-        app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnTrifasico"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:elevation="0dp"
-        android:insetTop="2dp"
-        android:insetBottom="0dp"
-        android:onClick="ExibirFragmentTrifasico"
-        android:text="Trifásico"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -46,7 +21,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnMono">
+        app:layout_constraintTop_toTopOf="parent">
 
     </FrameLayout>
 

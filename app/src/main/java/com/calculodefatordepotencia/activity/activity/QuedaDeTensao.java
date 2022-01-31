@@ -18,8 +18,7 @@ import com.calculodefatordepotencia.activity.fragmenty.TrifasicoFragment;
 
 public class QuedaDeTensao extends AppCompatActivity {
 
-    private Button btnMono;
-    private Button btnTrifasico;
+
     private MonoFragment monoFragment;
     private TrifasicoFragment trifasicoFragment;
     private Fragment fragment;
@@ -31,9 +30,7 @@ public class QuedaDeTensao extends AppCompatActivity {
 
         getSupportActionBar().setElevation(0);
 
-        //configurando botôes.
-        btnMono = findViewById(R.id.btnMono);
-        btnTrifasico = findViewById(R.id.btnTrifasico);
+
 
         //configurando classes
         monoFragment = new MonoFragment();

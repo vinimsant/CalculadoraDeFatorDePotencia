@@ -2,6 +2,7 @@ package com.calculodefatordepotencia.activity.fragmenty;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -35,6 +36,7 @@ public class MonoFragment extends Fragment {
 
     private Spinner tipoDeCondutor;
     private Spinner tipoDeCalculo;
+    private Spinner triOuMono;
     private EditText txtQuedaTensao;
     private EditText txtFatorDePotencia;
     private EditText txtCorrente;
@@ -47,6 +49,8 @@ public class MonoFragment extends Fragment {
     private double resistividadeDoFio = 0.0172;
     // verificador do spiner queda ou bitola caso variavel receba 0 selecionado queda caso receba 1 bitola selecionada
     private int spinerQueda = 0;
+    //verificador de tensão trifásica ou monofásica
+    private boolean trifasico = true;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -144,17 +148,52 @@ public class MonoFragment extends Fragment {
                    case 0:
                        spinerQueda = 0;
                        txtBitola.setEnabled(false);
+                       Drawable d = getResources().getDrawable(R.drawable.custon_edit_text_desligado);
+                       txtBitola.setBackground(d);
                        txtQuedaTensao.setEnabled(true);
+                       Drawable l = getResources().getDrawable(R.drawable.custon_edit_text);
+                       txtQuedaTensao.setBackground(l);
                        LimparTelaQueda();
                        break;
                    case 1:
                        spinerQueda = 1;
                        txtQuedaTensao.setEnabled(false);
+                       Drawable d1 = getResources().getDrawable(R.drawable.custon_edit_text_desligado);
+                       txtQuedaTensao.setBackground(d1);
                        txtBitola.setEnabled(true);
+                       Drawable l1 = getResources().getDrawable(R.drawable.custon_edit_text);
+                       txtBitola.setBackground(l1);
                        LimparTelaQueda();
                        break;
                }
 
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        //configuração do spner trifasico ou mono
+        ArrayAdapter<CharSequence> arrayAdapter2 = ArrayAdapter.createFromResource(getContext(),
+                R.array.sistema_trifasico_ou_monofasico, android.R.layout.simple_spinner_item);
+        arrayAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        triOuMono = (Spinner)view.findViewById(R.id.spn_TriOuMono);
+        triOuMono.setAdapter(arrayAdapter2);
+        triOuMono.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                switch (position){
+                    //sistema trifásico
+                    case 0:
+                        trifasico = true;
+                        break;
+                    //sistema monofásico
+                    case 1:
+                        trifasico = false;
+                        break;
+                }
             }
 
             @Override
@@ -208,6 +247,14 @@ public class MonoFragment extends Fragment {
     }
 
     public void Calcular(){
+
+        //constante trifasica
+        double constanteTriOuMono;
+        if (trifasico == true){
+            constanteTriOuMono = 1.73;
+        }else {
+           constanteTriOuMono = 1;
+        }
         // calcular bitola
         if (spinerQueda == 0){
             double comprimento = 0;
@@ -227,7 +274,7 @@ public class MonoFragment extends Fragment {
                             corrente = Double.parseDouble(txtCorrente.getText().toString());
                             fatorDePotencia = Double.parseDouble(txtFatorDePotencia.getText().toString());
 
-                            bitola = 2*(resistividadeDoFio*comprimento/queda)*corrente*fatorDePotencia;
+                            bitola = 2*(resistividadeDoFio*comprimento*constanteTriOuMono/queda)*corrente*fatorDePotencia;
 
                             DecimalFormat result = new DecimalFormat("0.00");
                             txtResultado.setText("Necessário um " +
@@ -259,7 +306,7 @@ public class MonoFragment extends Fragment {
                             corrente = Double.parseDouble(txtCorrente.getText().toString());
                             fatorDePotencia = Double.parseDouble(txtFatorDePotencia.getText().toString());
 
-                            quedaDeTensao = 2*(resistividadeDoFio*comprimento/bitola)*corrente*fatorDePotencia;
+                            quedaDeTensao = 2*(resistividadeDoFio*comprimento*constanteTriOuMono/bitola)*corrente*fatorDePotencia;
 
                             DecimalFormat result = new DecimalFormat("0.00");
                             txtResultado.setText(result.format(quedaDeTensao) + " Volts de queda!");

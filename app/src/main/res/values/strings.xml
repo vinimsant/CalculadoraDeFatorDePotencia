@@ -14,6 +14,10 @@
         <item>Calcular Bitola do Condutor</item>
         <item>Calcular Queda de Tensão</item>
     </string-array>
+    <string-array name="sistema_trifasico_ou_monofasico">
+        <item>Sistema trifásico</item>
+        <item>Sistema monofásico</item>
+    </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
