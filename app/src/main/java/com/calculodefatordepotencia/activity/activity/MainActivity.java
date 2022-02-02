@@ -35,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        androidx.appcompat.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.gradient));
+
         /*txtPotenciaAtiva = (EditText)findViewById(R.id.txtPotenciaAtiva);
         txtFP = (EditText)findViewById(R.id.txtFatorDePotencia);
         txtFPDesejado = (EditText)findViewById(R.id.txtDesejado);

@@ -37,6 +37,8 @@ public class CalculadoraDeDesequelibrioDeTensao extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculadora_de_desequelibrio_de_tensao);
+        androidx.appcompat.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.gradient));
 
         result = (TextView)findViewById(R.id.txtResultadoDesequilibrio);
         txtRS = (EditText)findViewById(R.id.txtRS);
@@ -78,7 +80,7 @@ public class CalculadoraDeDesequelibrioDeTensao extends AppCompatActivity {
                    result.setText("\nDesequilibrio de Tensâo de " +
                            ""+df.format(desequilibrio)+"%\n"+"De acordo com o PRODIST " +
                            "Módulo 8 " +
-                           "da ANEEL o desequilibrio maximo aceitavel é de 3% para tensões menores ou iguais a 1.000 " +
+                           "da ANEEL, o desequilibrio maximo aceitavel é de 3% para tensões menores ou iguais a 1.000 " +
                            "Volts e de 2% para tensões entre 1.000 e 230.000 Volts!");
                    EsconderTeclado();
                    /*interstitialAd.loadAd(new AdRequest.Builder().build());

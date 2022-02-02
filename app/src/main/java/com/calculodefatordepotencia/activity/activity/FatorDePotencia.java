@@ -43,6 +43,10 @@ public class FatorDePotencia extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fator_de_potencia);
+
+        androidx.appcompat.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.gradient));
+
         txtPotenciaAtiva = (EditText)findViewById(R.id.txtPotenciaAtiva);
         txtFP = (EditText)findViewById(R.id.txtFatorDePotencia);
         txtFPDesejado = (EditText)findViewById(R.id.txtDesejado);
