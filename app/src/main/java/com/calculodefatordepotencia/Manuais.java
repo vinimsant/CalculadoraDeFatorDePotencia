@@ -39,14 +39,14 @@ public class Manuais extends AppCompatActivity {
     public void chamarFragmenteInv(View view){
         getSupportFragmentManager().beginTransaction().replace(R.id.frameManuais,
                 inversorFragment).commitNow();
-        btnInv.setTextColor(R.color.selesionado);
-        btnSolft.setTextColor(R.color.naoSelesionado);
+        //btnInv.setTextColor(R.color.selesionado);
+        //btnSolft.setTextColor(R.color.naoSelesionado);
     }
 
     public void chamarFragmentSolft(View view){
         getSupportFragmentManager().beginTransaction().replace(R.id.frameManuais,
                 solftFragmentes).commitNow();
-        btnSolft.setTextColor(R.color.selesionado);
-        btnInv.setTextColor(R.color.naoSelesionado);
+        //btnSolft.setTextColor(R.color.selesionado);
+        //btnInv.setTextColor(R.color.naoSelesionado);
     }
 }
