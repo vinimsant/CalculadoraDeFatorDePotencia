@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.calculodefatordepotencia.Manuais;
 import com.calculodefatordepotencia.R;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
@@ -130,6 +131,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void ChamarQueda(View v){
         Intent intent = new Intent(this, QuedaDeTensao.class);
+        startActivity(intent);
+    }
+
+    public void ChamarManuais(View v){
+        Intent intent = new Intent(this, Manuais.class);
         startActivity(intent);
     }
 

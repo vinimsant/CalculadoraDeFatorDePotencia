@@ -2,9 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.calculodefatordepotencia">
 
-
-    <uses-permission
-        android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -13,21 +11,22 @@
         android:roundIcon="@mipmap/ic_launcher_phi_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CalculoDeFatorDePotencia">
+        <activity android:name=".Manuais"></activity>
         <activity
             android:name=".activity.activity.QuedaDeTensao"
-            android:screenOrientation="portrait"
             android:label="Queda de Tensão"
-            android:windowSoftInputMode="stateHidden"></activity>
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".activity.activity.FatorDePotencia"
+            android:label="Fator de Potência"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden"
-            android:label="Fator de Potência"/>
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".activity.activity.CalculadoraDeDesequelibrioDeTensao"
+            android:label="Desequilíbrio de Tensão"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="stateHidden"
-            android:label="Desequilíbrio de Tensão"/>
+            android:windowSoftInputMode="stateHidden" />
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
