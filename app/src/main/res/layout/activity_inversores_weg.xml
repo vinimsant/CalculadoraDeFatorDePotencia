@@ -6,4 +6,146 @@
     android:layout_height="match_parent"
     tools:context=".activity.activity.inversores.InversoresWeg">
 
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline12"
+        app:layout_constraintEnd_toStartOf="@+id/guideline10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/cfw08" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/cfw09" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline13"
+        app:layout_constraintEnd_toStartOf="@+id/guideline10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline12"
+        app:srcCompat="@drawable/cfw11" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline13"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        app:layout_constraintTop_toTopOf="@+id/guideline12"
+        app:srcCompat="@drawable/cfw500" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline13"
+        app:srcCompat="@drawable/cfw11g" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        app:layout_constraintTop_toTopOf="@+id/guideline13"
+        app:srcCompat="@drawable/cfw500g" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.50" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.33" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.66" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:text="Manual CFW08"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/imageView6"
+        app:layout_constraintEnd_toStartOf="@+id/guideline10"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:text="Guia Com regua de Bornes CFW500"
+        android:textAlignment="center"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline10" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:text="Guia Com Regua de Bornes CFW11"
+        android:textAlignment="center"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView11"
+        app:layout_constraintEnd_toStartOf="@+id/guideline10"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:text="Manual CFW500"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/imageView10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline10" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:text="Manual CFW11"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/imageView9"
+        app:layout_constraintEnd_toStartOf="@+id/guideline10"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:text="Manual CFW09"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/imageView8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline10" />
 </androidx.constraintlayout.widget.ConstraintLayout>

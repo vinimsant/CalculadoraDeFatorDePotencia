@@ -2,6 +2,8 @@ package com.calculodefatordepotencia.ui.inversor;
 
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,10 +15,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.calculodefatordepotencia.R;
+import com.calculodefatordepotencia.activity.activity.inversores.InversoresDanfos;
+import com.calculodefatordepotencia.activity.activity.inversores.InversoresWeg;
 
 public class InversorFragment extends Fragment {
 
     private InversorViewModel mViewModel;
+
 
     public static InversorFragment newInstance() {
         return new InversorFragment();
@@ -34,6 +39,11 @@ public class InversorFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         mViewModel = new ViewModelProvider(this).get(InversorViewModel.class);
         // TODO: Use the ViewModel
+    }
+
+    public void chamarActiviteIversoresWeg(View view){
+        Intent intent = new Intent(getContext(), InversoresDanfos.class);
+        startActivity(intent);
     }
 
 }
