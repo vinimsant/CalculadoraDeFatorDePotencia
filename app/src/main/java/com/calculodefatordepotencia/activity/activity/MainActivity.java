@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void ChamarManuais(View v){
-        Intent intent = new Intent(this, Manuais.class);
+        Intent intent = new Intent(this, manuais1_0.class);
         startActivity(intent);
     }
 
