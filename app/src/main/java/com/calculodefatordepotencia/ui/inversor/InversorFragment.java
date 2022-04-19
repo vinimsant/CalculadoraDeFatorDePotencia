@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.calculodefatordepotencia.R;
 import com.calculodefatordepotencia.activity.activity.inversores.InversoresDanfos;
@@ -21,6 +22,7 @@ import com.calculodefatordepotencia.activity.activity.inversores.InversoresWeg;
 public class InversorFragment extends Fragment {
 
     private InversorViewModel mViewModel;
+    private ImageView imgWeg;
 
 
     public static InversorFragment newInstance() {
@@ -31,7 +33,16 @@ public class InversorFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.inversor_fragment, container, false);
+        View view = inflater.inflate(R.layout.inversor_fragment, container, false);
+        imgWeg = (ImageView)view.findViewById(R.id.imgInvWeg);
+        imgWeg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), InversoresWeg.class);
+                startActivity(intent);
+            }
+        });
+        return view;
     }
 
     @Override
@@ -42,7 +53,7 @@ public class InversorFragment extends Fragment {
     }
 
     public void chamarActiviteIversoresWeg(View view){
-        Intent intent = new Intent(getContext(), InversoresDanfos.class);
+        Intent intent = new Intent(view.getContext(), InversoresDanfos.class);
         startActivity(intent);
     }
 

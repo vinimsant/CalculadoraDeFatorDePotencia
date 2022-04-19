@@ -80,7 +80,6 @@
         android:id="@+id/imgInvWeg"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:onClick="chamarActiviteIversoresWeg"
         android:src="@drawable/weg_icon"
         app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintEnd_toEndOf="parent"
