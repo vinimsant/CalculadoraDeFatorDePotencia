@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_phi_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CalculoDeFatorDePotencia">
-        <activity android:name=".activity.activity.inversores.InversoresVacon"></activity>
+        <activity android:name=".activity.activity.ManuaisPdf"></activity>
+        <activity android:name=".activity.activity.inversores.InversoresVacon" />
         <activity android:name=".activity.activity.inversores.InversoresTelemecanique" />
         <activity android:name=".activity.activity.inversores.InversoresSiemens" />
         <activity android:name=".activity.activity.inversores.InversoresSchneider" />

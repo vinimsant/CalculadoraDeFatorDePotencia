@@ -52,9 +52,6 @@ public class InversorFragment extends Fragment {
         // TODO: Use the ViewModel
     }
 
-    public void chamarActiviteIversoresWeg(View view){
-        Intent intent = new Intent(view.getContext(), InversoresDanfos.class);
-        startActivity(intent);
-    }
+
 
 }
