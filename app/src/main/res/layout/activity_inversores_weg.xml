@@ -7,7 +7,7 @@
     tools:context=".activity.activity.inversores.InversoresWeg">
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/cfw08"
         android:layout_width="70dp"
         android:layout_height="70dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline12"
@@ -93,7 +93,7 @@
         android:layout_height="wrap_content"
         android:text="Manual CFW08"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/imageView6"
+        app:layout_constraintBottom_toTopOf="@+id/cfw08"
         app:layout_constraintEnd_toStartOf="@+id/guideline10"
         app:layout_constraintStart_toStartOf="parent" />
 
