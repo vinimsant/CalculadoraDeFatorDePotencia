@@ -12,15 +12,22 @@
         android:roundIcon="@mipmap/ic_launcher_phi_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CalculoDeFatorDePotencia">
-        <activity android:name=".activity.activity.ManuaisPdf"></activity>
+        <activity
+            android:name=".activity.activity.ManuaisPdf"
+            android:configChanges="orientation|keyboardHidden|screenSize">
+            </activity>
         <activity android:name=".activity.activity.inversores.InversoresVacon" />
         <activity android:name=".activity.activity.inversores.InversoresTelemecanique" />
         <activity android:name=".activity.activity.inversores.InversoresSiemens" />
         <activity android:name=".activity.activity.inversores.InversoresSchneider" />
-        <activity android:name=".activity.activity.inversores.InversoresWeg" />
+        <activity
+            android:name=".activity.activity.inversores.InversoresWeg"
+            android:screenOrientation="portrait" />
         <activity android:name=".activity.activity.inversores.InversoresDanfos" />
         <activity android:name=".activity.activity.inversores.InveroresABB" />
-        <activity android:name=".activity.activity.manuais1_0" />
+        <activity
+            android:name=".activity.activity.manuais1_0"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.activity.QuedaDeTensao"
             android:label="Queda de Tensão"

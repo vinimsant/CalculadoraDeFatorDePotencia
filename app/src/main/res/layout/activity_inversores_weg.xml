@@ -17,7 +17,7 @@
         app:srcCompat="@drawable/cfw08" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/cfw09"
         android:layout_width="70dp"
         android:layout_height="70dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline12"
@@ -27,7 +27,7 @@
         app:srcCompat="@drawable/cfw09" />
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/cfw11"
         android:layout_width="70dp"
         android:layout_height="70dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline13"
@@ -37,7 +37,7 @@
         app:srcCompat="@drawable/cfw11" />
 
     <ImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/cfw500"
         android:layout_width="70dp"
         android:layout_height="70dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline13"
@@ -47,7 +47,7 @@
         app:srcCompat="@drawable/cfw500" />
 
     <ImageView
-        android:id="@+id/imageView11"
+        android:id="@+id/cfw11borne"
         android:layout_width="70dp"
         android:layout_height="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -57,7 +57,7 @@
         app:srcCompat="@drawable/cfw11g" />
 
     <ImageView
-        android:id="@+id/imageView12"
+        android:id="@+id/cfw500borne"
         android:layout_width="70dp"
         android:layout_height="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -104,7 +104,7 @@
         android:text="Guia Com regua de Bornes CFW500"
         android:textAlignment="center"
         android:textSize="8sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView12"
+        app:layout_constraintBottom_toTopOf="@+id/cfw500borne"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline10" />
 
@@ -115,7 +115,7 @@
         android:text="Guia Com Regua de Bornes CFW11"
         android:textAlignment="center"
         android:textSize="8sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView11"
+        app:layout_constraintBottom_toTopOf="@+id/cfw11borne"
         app:layout_constraintEnd_toStartOf="@+id/guideline10"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -125,7 +125,7 @@
         android:layout_height="wrap_content"
         android:text="Manual CFW500"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/imageView10"
+        app:layout_constraintBottom_toTopOf="@+id/cfw500"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline10" />
 
@@ -135,7 +135,7 @@
         android:layout_height="wrap_content"
         android:text="Manual CFW11"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/imageView9"
+        app:layout_constraintBottom_toTopOf="@+id/cfw11"
         app:layout_constraintEnd_toStartOf="@+id/guideline10"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -145,7 +145,7 @@
         android:layout_height="wrap_content"
         android:text="Manual CFW09"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/imageView8"
+        app:layout_constraintBottom_toTopOf="@+id/cfw09"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline10" />
 </androidx.constraintlayout.widget.ConstraintLayout>
