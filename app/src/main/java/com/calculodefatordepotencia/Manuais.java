@@ -31,7 +31,7 @@ public class Manuais extends AppCompatActivity {
         //getSupportActionBar().setElevation(0);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.frameManuais, solftFragmentes)
+                    .replace(R.id.frameManuais, InversorFragment.newInstance())
                     .commitNow();
         }
     }

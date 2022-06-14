@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.calculodefatordepotencia.Manuais;
 import com.calculodefatordepotencia.R;
+import com.calculodefatordepotencia.activity.activity.inversores.InversoresDanfos;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
@@ -135,8 +136,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void ChamarManuais(View v){
-        Intent intent = new Intent(this, Manuais.class);
+        Intent intent = new Intent(this, manuais1_0.class);
         startActivity(intent);
     }
+
+
 
 }
