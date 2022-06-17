@@ -12,10 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_phi_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CalculoDeFatorDePotencia">
+        <activity android:name=".activity.activity.solftstarter.SolftVacon"></activity>
+        <activity android:name=".activity.activity.solftstarter.SolftSiemens" />
+        <activity android:name=".activity.activity.solftstarter.SolftDanfos" />
+        <activity android:name=".activity.activity.solftstarter.SolftScheneider" />
+        <activity android:name=".activity.activity.solftstarter.SolftAbb" />
+        <activity android:name=".activity.activity.solftstarter.SolftWeg" />
         <activity
             android:name=".activity.activity.ManuaisPdf"
-            android:configChanges="orientation|keyboardHidden|screenSize">
-            </activity>
+            android:configChanges="orientation|keyboardHidden|screenSize" />
         <activity android:name=".activity.activity.inversores.InversoresVacon" />
         <activity android:name=".activity.activity.inversores.InversoresTelemecanique" />
         <activity android:name=".activity.activity.inversores.InversoresSiemens" />
