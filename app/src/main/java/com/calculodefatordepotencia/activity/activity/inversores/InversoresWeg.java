@@ -15,9 +15,8 @@ public class InversoresWeg extends AppCompatActivity {
     ImageView cfw08;
     ImageView cfw09;
     ImageView cfw11;
-    ImageView cfw11Borne;
     ImageView cfw500;
-    ImageView cfw500Borne;
+
 
 
     @Override
@@ -46,8 +45,15 @@ public class InversoresWeg extends AppCompatActivity {
         cfw11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), ManuaisPdf.class);
-                intent.putExtra("indexManual", 3);
+                Intent intent = new Intent(getApplicationContext(), Cfw11.class);
+                startActivity(intent);
+            }
+        });
+        cfw500 = findViewById(R.id.cfw500);
+        cfw500.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Cfw500.class);
                 startActivity(intent);
             }
         });

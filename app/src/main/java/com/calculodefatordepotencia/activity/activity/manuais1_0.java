@@ -44,7 +44,7 @@ public class manuais1_0 extends AppCompatActivity {
         solft.setElevation(0);
         inv.setTextColor(getResources().getColor(R.color.white));
         solft.setTextColor(getResources().getColor(R.color.black));
-        actionBar.setTitle("SolftStarter");
+        actionBar.setTitle("SolftStarteres");
     }
 
     public void inversoresFragment(View view){

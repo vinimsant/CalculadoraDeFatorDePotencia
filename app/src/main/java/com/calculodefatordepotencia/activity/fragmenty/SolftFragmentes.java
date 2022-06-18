@@ -1,5 +1,6 @@
 package com.calculodefatordepotencia.activity.fragmenty;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,8 +8,15 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.calculodefatordepotencia.R;
+import com.calculodefatordepotencia.activity.activity.solftstarter.SolftAbb;
+import com.calculodefatordepotencia.activity.activity.solftstarter.SolftDanfos;
+import com.calculodefatordepotencia.activity.activity.solftstarter.SolftScheneider;
+import com.calculodefatordepotencia.activity.activity.solftstarter.SolftSiemens;
+import com.calculodefatordepotencia.activity.activity.solftstarter.SolftVacon;
+import com.calculodefatordepotencia.activity.activity.solftstarter.SolftWeg;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -54,10 +62,74 @@ public class SolftFragmentes extends Fragment {
         }
     }
 
+    private ImageView imgWeg;
+    private ImageView imgDanfos;
+    private ImageView imgAbb;
+    private ImageView imgSchineider;
+    private ImageView imgSiemens;
+    private ImageView imgVacon;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_solft_fragmentes, container, false);
+        View view = inflater.inflate(R.layout.fragment_solft_fragmentes, container, false);
+
+        imgAbb = view.findViewById(R.id.imgSftAbb);
+        imgDanfos = view.findViewById(R.id.imgSftDamnfos);
+        imgSchineider = view.findViewById(R.id.imgSftTelemecanique);
+        imgSiemens = view.findViewById(R.id.imgSftSiemens);
+        imgVacon = view.findViewById(R.id.imgSftVacon);
+        imgWeg = view.findViewById(R.id.imgSftWeg);
+
+        imgAbb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), SolftAbb.class);
+                startActivity(intent);
+            }
+        });
+
+        imgDanfos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), SolftDanfos.class);
+                startActivity(intent);
+            }
+        });
+
+        imgSchineider.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), SolftScheneider.class);
+                startActivity(intent);
+            }
+        });
+
+        imgSiemens.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), SolftSiemens.class);
+                startActivity(intent);
+            }
+        });
+
+        imgVacon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), SolftVacon.class);
+                startActivity(intent);
+            }
+        });
+
+        imgWeg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), SolftWeg.class);
+                startActivity(intent);
+            }
+        });
+
+        return view;
     }
 }

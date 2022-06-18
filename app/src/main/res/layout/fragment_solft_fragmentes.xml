@@ -29,8 +29,8 @@
 
     <ImageView
         android:id="@+id/imgSftAbb"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:layout_gravity="center"
         android:background="@drawable/custon_image_button_main"
         android:padding="5dp"
@@ -42,8 +42,8 @@
 
     <ImageView
         android:id="@+id/imgSftDamnfos"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:layout_gravity="center"
         android:background="@drawable/custon_image_button_main"
         android:padding="5dp"
@@ -55,21 +55,21 @@
 
     <ImageView
         android:id="@+id/imgSftSiemens"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:layout_gravity="center"
         android:background="@drawable/custon_image_button_main"
         android:padding="5dp"
         android:src="@drawable/siemens_icon"
         app:layout_constraintBottom_toTopOf="@+id/guideline6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline8"
+        app:layout_constraintEnd_toStartOf="@+id/guideline8"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline7" />
 
     <ImageView
         android:id="@+id/imgSftWeg"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:layout_gravity="center"
         android:background="@drawable/custon_image_button_main"
         android:padding="5dp"
@@ -81,8 +81,8 @@
 
     <ImageView
         android:id="@+id/imgSftVacon"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:layout_gravity="center"
         android:background="@drawable/custon_image_button_main"
         android:padding="5dp"
@@ -94,15 +94,15 @@
 
     <ImageView
         android:id="@+id/imgSftTelemecanique"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
         android:layout_gravity="center"
         android:background="@drawable/custon_image_button_main"
         android:padding="5dp"
         android:src="@drawable/telemecanique_icon"
         app:layout_constraintBottom_toTopOf="@+id/guideline6"
-        app:layout_constraintEnd_toStartOf="@+id/guideline8"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline8"
         app:layout_constraintTop_toTopOf="@+id/guideline7" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
