@@ -20,14 +20,14 @@ public class Cfw500 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cfw500);
 
-        imgCfw500Manuais.findViewById(R.id.cfw500manuais);
-        imgCfw500Guia.findViewById(R.id.cfw500borne);
+        imgCfw500Manuais = findViewById(R.id.cfw500manuais);
+        imgCfw500Guia = findViewById(R.id.cfw500borne);
 
         imgCfw500Manuais.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), ManuaisPdf.class);
-                intent.putExtra("indexManual", 5);
+                intent.putExtra("indexManual", "cfw500manual");
                 startActivity(intent);
             }
         });
@@ -36,7 +36,7 @@ public class Cfw500 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), ManuaisPdf.class);
-                intent.putExtra("indexManual", 6);
+                intent.putExtra("indexManual", "cfw500bornes");
                 startActivity(intent);
             }
         });

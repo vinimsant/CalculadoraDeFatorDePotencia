@@ -12,31 +12,31 @@ import com.calculodefatordepotencia.activity.activity.ManuaisPdf;
 
 public class Cfw11 extends AppCompatActivity {
 
-    private ImageView imgCfw11Manual;
-    private ImageView imgCfw11Guia;
+    private ImageView imgManual;
+    private ImageView imgBornes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cfw11);
 
-        imgCfw11Manual.findViewById(R.id.cfw11manuais);
-        imgCfw11Guia.findViewById(R.id.cfw11borne);
+        imgManual = findViewById(R.id.cfw11manual);
+        imgBornes = findViewById(R.id.cfw11borne);
 
-        imgCfw11Manual.setOnClickListener(new View.OnClickListener() {
+        imgManual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), ManuaisPdf.class);
-                intent.putExtra("indexManual", 3);
+                intent.putExtra("indexManual", "cfw11manual");
                 startActivity(intent);
             }
         });
 
-        imgCfw11Guia.setOnClickListener(new View.OnClickListener() {
+        imgBornes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), ManuaisPdf.class);
-                intent.putExtra("indexManual", 4);
+                intent.putExtra("indexManual", "cfw11bornes");
                 startActivity(intent);
             }
         });

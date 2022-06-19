@@ -28,7 +28,7 @@ public class InversoresWeg extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), ManuaisPdf.class);
-                intent.putExtra("indexManual", 1);
+                intent.putExtra("indexManual", "cfw08");
                 startActivity(intent);
             }
         });
@@ -37,7 +37,7 @@ public class InversoresWeg extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), ManuaisPdf.class);
-                intent.putExtra("indexManual", 2);
+                intent.putExtra("indexManual", "cfw09");
                 startActivity(intent);
             }
         });
