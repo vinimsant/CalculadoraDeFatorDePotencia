@@ -1,10 +1,15 @@
 package com.calculodefatordepotencia.activity.activity;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.ContentInfo;
+import android.view.OnReceiveContentListener;
+import android.view.View;
 import android.widget.Switch;
 import android.widget.Toast;
 
@@ -38,7 +43,7 @@ public class ManuaisPdf extends AppCompatActivity{
         // selecionando o pdf através do index
         pdfView.fromAsset(assentManual)
                 .scrollHandle(new DefaultScrollHandle(this)).load();
-
+        
     }
 
     private void selecionarAssent(){
@@ -67,17 +72,36 @@ public class ManuaisPdf extends AppCompatActivity{
                 assentManual = "Manual-do-Usuário-CFW500-regua de borne.pdf";
                 break;
 
-            case "cw11manual":
+            case "acs150":
+                assentManual = "abb_acs150.pdf";
+                break;
+
+            case "acs350":
+                assentManual = "abb_acs350.pdf";
+                break;
+
+            case "acs550":
+                assentManual = "abb_acs550.pdf";
+                break;
+
+            case "acs800":
+                assentManual = "abb_acs800.pdf";
+                break;
+
+            case "acs35":
                 assentManual = "Manual WEG CFW11_portugues.pdf";
                 break;
 
-            case "c11manual":
+            case "acs30":
                 assentManual = "Manual WEG CFW11_portugues.pdf";
                 break;
 
-            case "cmanual":
+            case "acs50":
                 assentManual = "Manual WEG CFW11_portugues.pdf";
                 break;
+
+
+
         }
 
     }
