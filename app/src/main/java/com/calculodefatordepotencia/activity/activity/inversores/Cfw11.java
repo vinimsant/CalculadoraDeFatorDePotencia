@@ -22,6 +22,7 @@ public class Cfw11 extends AppCompatActivity {
 
         imgManual = findViewById(R.id.cfw11manual);
         imgBornes = findViewById(R.id.cfw11borne);
+        setTitle("Inversor CFW11");
 
         imgManual.setOnClickListener(new View.OnClickListener() {
             @Override

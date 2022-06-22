@@ -22,6 +22,8 @@ public class InveroresABB extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inverores_a_b_b);
 
+        setTitle("Inversores ABB");
+
         acs150 = findViewById(R.id.imginvacs150);
         acs350 = findViewById(R.id.imginvacs350);
         acs550 = findViewById(R.id.imginvacs550);

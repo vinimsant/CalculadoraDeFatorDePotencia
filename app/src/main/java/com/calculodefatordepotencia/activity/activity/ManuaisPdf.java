@@ -34,6 +34,9 @@ public class ManuaisPdf extends AppCompatActivity{
         if (extra != null){
             indexManual = extra.getString("indexManual");
         }
+
+        setTitle(indexManual);
+
         // recuperando o pdfviewr
         pdfView = (PDFView) findViewById(R.id.pdfview);
 
@@ -88,19 +91,57 @@ public class ManuaisPdf extends AppCompatActivity{
                 assentManual = "abb_acs800.pdf";
                 break;
 
-            case "acs35":
-                assentManual = "Manual WEG CFW11_portugues.pdf";
+            case "atv11":
+                assentManual = "ATV11.pdf";
                 break;
 
-            case "acs30":
-                assentManual = "Manual WEG CFW11_portugues.pdf";
+            case "atv12":
+                assentManual = "atv12.pdf";
                 break;
 
-            case "acs50":
-                assentManual = "Manual WEG CFW11_portugues.pdf";
+            case "atv212":
+                assentManual = "ATV212.pdf";
                 break;
 
+            case "atv28":
+                assentManual = "atv28.pdf";
+                break;
 
+            case "atv31":
+                assentManual = "atv31.pdf";
+                break;
+
+            case "atv32":
+                assentManual = "atv32.pdf";
+                break;
+
+            case "atv61":
+                assentManual = "ATV61.pdf";
+                break;
+
+            case "atv71":
+                assentManual = "atv71.pdf";
+                break;
+
+            case "atv312":
+                assentManual = "atv312.pdf";
+                break;
+
+            case "atv320":
+                assentManual = "atv320.pdf";
+                break;
+
+            case "atv600":
+                assentManual = "atv600_manual_de_programação.pdf";
+                break;
+
+            case "atv630":
+                assentManual = "atv630_manual_de_instalação.pdf";
+                break;
+
+            case "atv6":
+                assentManual = "ATV61.pdf";
+                break;
 
         }
 
