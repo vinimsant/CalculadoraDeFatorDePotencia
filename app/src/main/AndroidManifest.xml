@@ -13,53 +13,59 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CalculoDeFatorDePotencia">
         <activity
-            android:name=".activity.activity.inversores.Cfw500"
+            android:name=".activity.activity.inversores.Micromaster440"
             android:screenOrientation="portrait"></activity>
         <activity
+            android:name=".activity.activity.inversores.Fc051"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.activity.inversores.Cfw500"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".activity.activity.inversores.Cfw11"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.activity.solftstarter.SolftVacon"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.activity.solftstarter.SolftSiemens"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.activity.solftstarter.SolftDanfos"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.activity.solftstarter.SolftScheneider"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.activity.solftstarter.SolftAbb"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.activity.solftstarter.SolftWeg"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.activity.ManuaisPdf"
             android:configChanges="orientation|keyboardHidden|screenSize" />
         <activity
             android:name=".activity.activity.inversores.InversoresVacon"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.activity.inversores.InversoresTelemecanique"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.activity.inversores.InversoresSiemens"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.activity.inversores.InversoresSchneider"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.activity.inversores.InversoresWeg"
             android:screenOrientation="portrait" />
         <activity
             android:name=".activity.activity.inversores.InversoresDanfos"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.activity.inversores.InveroresABB"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.activity.manuais1_0"
             android:screenOrientation="portrait" />

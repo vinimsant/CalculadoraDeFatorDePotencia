@@ -139,8 +139,44 @@ public class ManuaisPdf extends AppCompatActivity{
                 assentManual = "atv630_manual_de_instalação.pdf";
                 break;
 
-            case "atv6":
-                assentManual = "ATV61.pdf";
+            case "fc101":
+                assentManual = "fc101.pdf";
+                break;
+
+            case "fc202":
+                assentManual = "fc202.pdf";
+                break;
+
+            case "fc051":
+                assentManual = "fc051.pdf";
+                break;
+
+            case "fc051bornes":
+                assentManual = "fc051_regua_de_bornes.pdf";
+                break;
+
+            case "vacon10":
+                assentManual = "vacon10.pdf";
+                break;
+
+            case "vacon20":
+                assentManual = "vacon20.pdf";
+                break;
+
+            case "vacon100":
+                assentManual = "vacon100.pdf";
+                break;
+
+            case "vacon0":
+                assentManual = "vacon20.pdf";
+                break;
+
+            case "vacon2":
+                assentManual = "vacon20.pdf";
+                break;
+
+            case "vaco20":
+                assentManual = "vacon20.pdf";
                 break;
 
         }

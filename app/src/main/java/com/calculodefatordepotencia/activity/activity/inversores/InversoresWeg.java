@@ -23,6 +23,8 @@ public class InversoresWeg extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inversores_weg);
+
+        setTitle("Inversores WEG");
         cfw08 = findViewById(R.id.cfw08);
         cfw08.setOnClickListener(new View.OnClickListener() {
             @Override

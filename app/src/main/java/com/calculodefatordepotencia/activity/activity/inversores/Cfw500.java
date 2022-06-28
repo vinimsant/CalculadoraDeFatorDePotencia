@@ -20,6 +20,8 @@ public class Cfw500 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cfw500);
 
+        setTitle("Inversor CFW500");
+
         imgCfw500Manuais = findViewById(R.id.cfw500manuais);
         imgCfw500Guia = findViewById(R.id.cfw500borne);
 
