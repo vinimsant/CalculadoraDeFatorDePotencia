@@ -44,7 +44,7 @@ public class InveroresABB extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent = new Intent(getApplicationContext(), ManuaisPdf.class);
-                intent.putExtra("indexManual", "acs350");
+                intent.putExtra("indexManual", "acs355");
                 startActivity(intent);
             }
         });

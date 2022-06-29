@@ -79,7 +79,7 @@ public class ManuaisPdf extends AppCompatActivity{
                 assentManual = "abb_acs150.pdf";
                 break;
 
-            case "acs350":
+            case "acs355":
                 assentManual = "abb_acs350.pdf";
                 break;
 
@@ -167,11 +167,31 @@ public class ManuaisPdf extends AppCompatActivity{
                 assentManual = "vacon100.pdf";
                 break;
 
-            case "vacon0":
+            case "Guia Micromaster440":
+                assentManual = "micromaster_440_guia_com_regua_de_bornes.pdf";
+                break;
+
+            case "Manual Micromaster440":
+                assentManual = "micromaster440_manual_de_programacao.pdf";
+                break;
+
+            case "micromaster420":
+                assentManual = "siemens_mm420.pdf";
+                break;
+
+            case "micromaster430":
+                assentManual = "micromaster430_ingles.pdf";
+                break;
+
+            case "vaco2":
                 assentManual = "vacon20.pdf";
                 break;
 
-            case "vacon2":
+            case "vaco0":
+                assentManual = "vacon20.pdf";
+                break;
+
+            case "vac20":
                 assentManual = "vacon20.pdf";
                 break;
 
