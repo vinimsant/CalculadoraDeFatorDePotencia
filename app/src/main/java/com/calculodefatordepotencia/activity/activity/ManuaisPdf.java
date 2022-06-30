@@ -183,19 +183,39 @@ public class ManuaisPdf extends AppCompatActivity{
                 assentManual = "micromaster430_ingles.pdf";
                 break;
 
-            case "vaco2":
-                assentManual = "vacon20.pdf";
+            case "SSW05":
+                assentManual = "ssw05 manual de usuarios.pdf";
                 break;
 
-            case "vaco0":
-                assentManual = "vacon20.pdf";
+            case "SSW07":
+                assentManual = "ssw07-08.pdf";
                 break;
 
-            case "vac20":
-                assentManual = "vacon20.pdf";
+            case "SSW900":
+                assentManual = "ssw900.pdf";
                 break;
 
-            case "vaco20":
+            case "3rw30/3rw40":
+                assentManual = "siemens_3RW30_3RW40_pt-BR.pdf";
+                break;
+
+            case "3rw44":
+                assentManual = "siemens_3rw44_pt-BR.pdf";
+                break;
+
+            case "3rw50":
+                assentManual = "siemens_3RW50_pt-BR.pdf";
+                break;
+
+            case "3rw52":
+                assentManual = "siemens_3RW52_pt-BR.pdf";
+                break;
+
+            case "3rw55":
+                assentManual = "siemens_3RW55_pt-BR.pdf";
+                break;
+
+            case "3rw30/3rw4":
                 assentManual = "vacon20.pdf";
                 break;
 

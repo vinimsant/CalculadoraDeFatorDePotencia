@@ -33,7 +33,7 @@
         android:layout_height="130dp"
         android:layout_gravity="center"
         android:background="@drawable/custon_image_button_main"
-        android:padding="5dp"
+        android:padding="10dp"
         android:src="@drawable/abb_icon"
         app:layout_constraintBottom_toTopOf="@+id/guideline7"
         app:layout_constraintEnd_toStartOf="@+id/guideline8"
