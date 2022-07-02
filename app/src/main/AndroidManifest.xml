@@ -13,8 +13,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CalculoDeFatorDePotencia">
         <activity
-            android:name=".activity.activity.inversores.Micromaster440"
+            android:name=".activity.activity.solftstarter.DanfosMcd201"
             android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.activity.inversores.Micromaster440"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.activity.inversores.Fc051"
             android:screenOrientation="portrait" />

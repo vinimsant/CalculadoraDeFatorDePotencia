@@ -67,7 +67,6 @@ public class SolftFragmentes extends Fragment {
     private ImageView imgAbb;
     private ImageView imgSchineider;
     private ImageView imgSiemens;
-    private ImageView imgVacon;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -79,7 +78,6 @@ public class SolftFragmentes extends Fragment {
         imgDanfos = view.findViewById(R.id.imgSftDamnfos);
         imgSchineider = view.findViewById(R.id.imgSftTelemecanique);
         imgSiemens = view.findViewById(R.id.imgSftSiemens);
-        imgVacon = view.findViewById(R.id.imgSftVacon);
         imgWeg = view.findViewById(R.id.imgSftWeg);
 
         imgAbb.setOnClickListener(new View.OnClickListener() {
@@ -114,13 +112,6 @@ public class SolftFragmentes extends Fragment {
             }
         });
 
-        imgVacon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), SolftVacon.class);
-                startActivity(intent);
-            }
-        });
 
         imgWeg.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -219,6 +219,50 @@ public class ManuaisPdf extends AppCompatActivity{
                 assentManual = "vacon20.pdf";
                 break;
 
+            case "Ats01":
+                assentManual = "ats01.pdf";
+                break;
+
+            case "Ats22":
+                assentManual = "ATS22-Manual do Usuario-BR.pdf";
+                break;
+
+            case "Ats48":
+                assentManual = "ats48.pdf";
+                break;
+
+            case "ABB PSR":
+                assentManual = "abb psr.pdf";
+                break;
+
+            case "ABB PSE":
+                assentManual = "abb pse.pdf";
+                break;
+
+            case "ABB PST":
+                assentManual = "abb pst.pdf";
+                break;
+
+            case "mcd100":
+                assentManual = "mcd100.pdf";
+                break;
+
+            case "mcd201/202 manual":
+                assentManual = "manual mcd 201-2202.pdf";
+                break;
+
+            case "mcd201/202 bornes":
+                assentManual = "guia mcd 201-202.pdf";
+                break;
+
+            case "mcd500":
+                assentManual = "mcd500.pdf";
+                break;
+
+            case "mcd600":
+                assentManual = "mcd600.pdf";
+                break;
+
         }
 
     }

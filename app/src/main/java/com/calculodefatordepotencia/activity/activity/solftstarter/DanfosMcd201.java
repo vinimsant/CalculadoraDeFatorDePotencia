@@ -10,46 +10,35 @@ import android.widget.ImageView;
 import com.calculodefatordepotencia.R;
 import com.calculodefatordepotencia.activity.activity.ManuaisPdf;
 
-public class SolftAbb extends AppCompatActivity {
+public class DanfosMcd201 extends AppCompatActivity {
 
-    ImageView psr;
-    ImageView pse;
-    ImageView pst;
+    ImageView mcd201m;
+    ImageView mcd201b;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_solft_abb);
+        setContentView(R.layout.activity_danfos_mcd201);
 
-        setTitle("SolftStarter ABB");
+        setTitle("SolftStarter MCD201/202");
 
-        psr = findViewById(R.id.ImgPsr);
-        pse = findViewById(R.id.ImgPse);
-        pst = findViewById(R.id.ImgPst);
+        mcd201m = findViewById(R.id.ImgMcd201M);
+        mcd201b = findViewById(R.id.ImgMcd201G);
 
-        psr.setOnClickListener(new View.OnClickListener() {
+        mcd201m.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getBaseContext(), ManuaisPdf.class);
-                intent.putExtra("indexManual", "ABB PSR");
+                intent.putExtra("indexManual", "mcd201/202 manual");
                 startActivity(intent);
             }
         });
 
-        pse.setOnClickListener(new View.OnClickListener() {
+        mcd201b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getBaseContext(), ManuaisPdf.class);
-                intent.putExtra("indexManual", "ABB PSE");
-                startActivity(intent);
-            }
-        });
-
-        pst.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getBaseContext(), ManuaisPdf.class);
-                intent.putExtra("indexManual", "ABB PST");
+                intent.putExtra("indexManual", "mcd201/202 bornes");
                 startActivity(intent);
             }
         });
