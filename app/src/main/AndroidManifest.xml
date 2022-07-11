@@ -12,9 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_phi_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CalculoDeFatorDePotencia">
+        <activity android:name=".activity.activity.inversores.AllenBradley"></activity>
         <activity
             android:name=".activity.activity.solftstarter.DanfosMcd201"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.activity.inversores.Micromaster440"
             android:screenOrientation="portrait" />
