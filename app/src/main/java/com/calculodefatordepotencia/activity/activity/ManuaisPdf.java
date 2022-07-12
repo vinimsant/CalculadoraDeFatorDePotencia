@@ -263,6 +263,26 @@ public class ManuaisPdf extends AppCompatActivity{
                 assentManual = "mcd600.pdf";
                 break;
 
+            case "mvw01":
+                assentManual = "mvw01.pdf";
+                break;
+
+            case "cfw501":
+                assentManual = "cfw501.pdf";
+                break;
+
+            case "cfw701":
+                assentManual = "cfw701.pdf";
+                break;
+
+            case "guia cfw100":
+                assentManual = "cfw100guia.pdf";
+                break;
+
+            case "cfw100":
+                assentManual = "cfw100.pdf";
+                break;
+
         }
 
     }

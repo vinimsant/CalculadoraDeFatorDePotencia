@@ -12,7 +12,24 @@
         android:roundIcon="@mipmap/ic_launcher_phi_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CalculoDeFatorDePotencia">
-        <activity android:name=".activity.activity.inversores.AllenBradley"></activity>
+        <activity
+            android:name=".activity.activity.inversores.Mvw3000"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.activity.inversores.Mvw500"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.activity.inversores.Cfw700"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.activity.inversores.Cfw300"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.activity.inversores.Cfw100"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.activity.inversores.AllenBradley"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".activity.activity.solftstarter.DanfosMcd201"
             android:screenOrientation="portrait" />
