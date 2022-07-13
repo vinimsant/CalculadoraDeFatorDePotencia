@@ -74,7 +74,8 @@ public class InversoresWeg extends AppCompatActivity {
         cfw300.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(getBaseContext(), Cfw300.class);
+                startActivity(intent);
             }
         });
 
@@ -94,6 +95,8 @@ public class InversoresWeg extends AppCompatActivity {
         cfw700.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(getBaseContext(), Cfw700.class);
+                startActivity(intent);
 
             }
         });
@@ -126,6 +129,8 @@ public class InversoresWeg extends AppCompatActivity {
         mvw500.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(getBaseContext(), Mvw500.class);
+                startActivity(intent);
 
             }
         });
@@ -134,6 +139,8 @@ public class InversoresWeg extends AppCompatActivity {
         mvw3000.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(getBaseContext(), Mvw3000.class);
+                startActivity(intent);
 
             }
         });

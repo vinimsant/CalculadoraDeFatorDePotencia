@@ -22,6 +22,7 @@ public class Cfw100 extends AppCompatActivity {
 
         manual = findViewById(R.id.cfw100manual);
         bornes = findViewById(R.id.cfw100borne);
+        setTitle("cfw 100");
 
         manual.setOnClickListener(new View.OnClickListener() {
             @Override
