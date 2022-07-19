@@ -7,9 +7,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher_phi"
+        android:icon="@drawable/icone1"
         android:label="EletroHelper"
-        android:roundIcon="@mipmap/ic_launcher_phi_round"
+        android:roundIcon="@drawable/icone1"
         android:supportsRtl="true"
         android:theme="@style/Theme.CalculoDeFatorDePotencia">
         <activity

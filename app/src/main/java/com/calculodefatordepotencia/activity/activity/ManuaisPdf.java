@@ -17,17 +17,35 @@ import com.calculodefatordepotencia.R;
 import com.github.barteksc.pdfviewer.PDFView;
 import com.github.barteksc.pdfviewer.listener.OnPageChangeListener;
 import com.github.barteksc.pdfviewer.scroll.DefaultScrollHandle;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
 
 public class ManuaisPdf extends AppCompatActivity{
 
     PDFView pdfView;
     String indexManual = "";
     String assentManual;
+    private InterstitialAd interstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manuais_pdf);
+
+        MobileAds.initialize(this);
+
+        //Interticial
+        interstitialAd = new InterstitialAd(this);
+        //Oficial
+        //interstitialAd.setAdUnitId("ca-app-pub-2398950190237031/2397589163");
+        //Teste
+        interstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        interstitialAd.loadAd(new AdRequest.Builder().build());
+        if (interstitialAd.isLoaded()){
+            interstitialAd.show();
+        }
+
 
         //recuperando extra
         Bundle extra = getIntent().getExtras();

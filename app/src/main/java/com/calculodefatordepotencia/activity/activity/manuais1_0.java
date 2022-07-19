@@ -24,6 +24,8 @@ public class manuais1_0 extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.frameLayoutManuais1_0, InversorFragment.newInstance())
                 .commit();
 
+
+
         inv = findViewById(R.id.btnInvManuais1_0);
         solft = findViewById(R.id.btnSoltManuais1_0);
         inv.setElevation(0);
@@ -34,6 +36,7 @@ public class manuais1_0 extends AppCompatActivity {
         //configurando a action bar
         actionBar = this.getSupportActionBar();
         actionBar.setTitle("Inversores");
+        //actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.gradient));
 
     }
 

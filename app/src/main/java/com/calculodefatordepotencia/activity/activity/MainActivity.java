@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     String potenciaAtiva;
     String fp;
     String fpDesejado;
+    ImageView manuais;
 
     private InterstitialAd interstitialAd;
 
@@ -54,6 +56,15 @@ public class MainActivity extends AppCompatActivity {
         //Teste
         //interstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
         interstitialAd.loadAd(new AdRequest.Builder().build());
+
+        manuais = findViewById(R.id.imgMainManuais);
+        manuais.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getBaseContext(), manuais1_0.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void Calcular(View v){

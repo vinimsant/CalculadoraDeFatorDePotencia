@@ -64,9 +64,11 @@
             android:layout_height="130dp"
             android:layout_gravity="center"
             android:layout_marginTop="60dp"
+            android:layout_marginBottom="160dp"
             android:background="@drawable/custon_image_button_main"
             android:padding="5dp"
             android:src="@drawable/weg_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline4"
             app:layout_constraintTop_toBottomOf="@+id/imgInvSiemens" />
@@ -95,29 +97,17 @@
             android:src="@drawable/telemecanique_icon"
             app:layout_constraintEnd_toStartOf="@+id/guideline4"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgInvAbb" />
+            app:layout_constraintTop_toBottomOf="@+id/imgInvAbb" /><![CDATA[
 
-        <ImageView
-            android:id="@+id/imgInvAllenBradley"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="60dp"
-            android:layout_marginBottom="50dp"
-            android:background="@drawable/custon_image_button_main"
-            android:padding="5dp"
-            android:src="@drawable/allen_bradley_rockwell_red"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/guideline4"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgInvVacon" /><![CDATA[
+
 
 
 =======
     >>>>>>> github/master
 
 
-]]>
+
+    ]]>
     </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
