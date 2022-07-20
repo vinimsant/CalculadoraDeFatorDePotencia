@@ -7,6 +7,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.ContentInfo;
 import android.view.OnReceiveContentListener;
 import android.view.View;
@@ -17,34 +18,62 @@ import com.calculodefatordepotencia.R;
 import com.github.barteksc.pdfviewer.PDFView;
 import com.github.barteksc.pdfviewer.listener.OnPageChangeListener;
 import com.github.barteksc.pdfviewer.scroll.DefaultScrollHandle;
+
+//admob
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
+
 
 public class ManuaisPdf extends AppCompatActivity{
 
     PDFView pdfView;
     String indexManual = "";
     String assentManual;
-    private InterstitialAd interstitialAd;
+    private InterstitialAd mInterstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manuais_pdf);
 
-        MobileAds.initialize(this);
 
-        //Interticial
-        interstitialAd = new InterstitialAd(this);
-        //Oficial
-        //interstitialAd.setAdUnitId("ca-app-pub-2398950190237031/2397589163");
-        //Teste
-        interstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
-        interstitialAd.loadAd(new AdRequest.Builder().build());
-        if (interstitialAd.isLoaded()){
-            interstitialAd.show();
-        }
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", adRequest,
+                new InterstitialAdLoadCallback() {
+                    @Override
+                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                        // The mInterstitialAd reference will be null until
+                        // an ad is loaded.
+                        mInterstitialAd = interstitialAd;
+                        Log.i("ADMOB", "onAdLoaded");
+                        if (mInterstitialAd != null) {
+                            mInterstitialAd.show(ManuaisPdf.this);
+                            Log.d("ADMOB", "o interticial foi chamado");
+                        } else {
+                            Log.d("ADMOB", "The interstitial ad wasn't ready yet.");
+                        }
+                    }
+
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        // Handle the error
+                        Log.d("ADMOB", loadAdError.toString());
+                        mInterstitialAd = null;
+                    }
+                });
+
+
 
 
         //recuperando extra
@@ -64,7 +93,18 @@ public class ManuaisPdf extends AppCompatActivity{
         // selecionando o pdf através do index
         pdfView.fromAsset(assentManual)
                 .scrollHandle(new DefaultScrollHandle(this)).load();
+
+
         
+    }
+
+    private void chamarInterticial(){
+        if (mInterstitialAd != null) {
+            mInterstitialAd.show(ManuaisPdf.this);
+            Log.d("ADMOB", "o interticial foi chamado");
+        } else {
+            Log.d("ADMOB", "The interstitial ad wasn't ready yet.");
+        }
     }
 
     private void selecionarAssent(){

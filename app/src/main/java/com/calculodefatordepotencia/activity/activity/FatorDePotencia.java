@@ -1,9 +1,11 @@
 package com.calculodefatordepotencia.activity.activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
@@ -14,10 +16,16 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.calculodefatordepotencia.R;
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
+
+import com.calculodefatordepotencia.R;
+
 
 import java.text.DecimalFormat;
 
@@ -32,7 +40,9 @@ public class FatorDePotencia extends AppCompatActivity {
     String fpDesejado;
     int posicaoSpiner;
 
-    private InterstitialAd interstitialAd;
+    private InterstitialAd mInterstitialAd;
+
+
 
     private String[] arraySpiner = new String[]{
       "Potência em W", "Potência em KW", "Potência e CV", "Potência em HP"
@@ -53,15 +63,31 @@ public class FatorDePotencia extends AppCompatActivity {
         resultado = (TextView)findViewById(R.id.txtResultado);
         posicaoSpiner = 0;
 
-        MobileAds.initialize(this);
+       //AdMob
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+        AdRequest adRequest = new AdRequest.Builder().build();
 
-        //Interticial
-        interstitialAd = new InterstitialAd(this);
-        //Oficial
-        interstitialAd.setAdUnitId("ca-app-pub-2398950190237031/2397589163");
-        //Teste
-        //interstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
-        interstitialAd.loadAd(new AdRequest.Builder().build());
+        InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", adRequest,
+                new InterstitialAdLoadCallback() {
+                    @Override
+                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                        // The mInterstitialAd reference will be null until
+                        // an ad is loaded.
+                        mInterstitialAd = interstitialAd;
+                        Log.i("TAG", "onAdLoaded");
+                    }
+
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        // Handle the error
+                        Log.d("TAG", loadAdError.toString());
+                        mInterstitialAd = null;
+                    }
+                });
 
         //Spiner
 
@@ -139,19 +165,23 @@ public class FatorDePotencia extends AppCompatActivity {
                             +df.format(result/1000)+"KVAR!\n"
                             +"!Certifique-se de verificar a Tensão do Equipamento!");
 
-                    interstitialAd.loadAd(new AdRequest.Builder().build());
-                    if (interstitialAd.isLoaded()){
-                        interstitialAd.show();
+                  //Admob
+                    if (mInterstitialAd != null) {
+                        mInterstitialAd.show(FatorDePotencia.this);
+                    } else {
+                        Log.d("TAG", "The interstitial ad wasn't ready yet.");
                     }
 
+
+
                 }else {
-                    Toast.makeText(this, "Digite a Potência o Fator de" +
+                    Toast.makeText(this, "Digite o Fator de" +
                             "Potência Desejado" +
                             "!", Toast.LENGTH_LONG).show();
                 }
 
             }else {
-                Toast.makeText(this, "Digite a Potência o Fator de" +
+                Toast.makeText(this, "Digite a Potência do Fator de" +
                         "Potência do Circuito que será corrigido" +
                         "!", Toast.LENGTH_LONG).show();
             }

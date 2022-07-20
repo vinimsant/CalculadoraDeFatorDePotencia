@@ -16,7 +16,7 @@ import com.calculodefatordepotencia.Manuais;
 import com.calculodefatordepotencia.R;
 import com.calculodefatordepotencia.activity.activity.inversores.InversoresDanfos;
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.InterstitialAd;
+
 import com.google.android.gms.ads.MobileAds;
 
 import java.text.DecimalFormat;
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     String fpDesejado;
     ImageView manuais;
 
-    private InterstitialAd interstitialAd;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,15 +47,10 @@ public class MainActivity extends AppCompatActivity {
         txtFPDesejado = (EditText)findViewById(R.id.txtDesejado);
         resultado = (TextView)findViewById(R.id.txtResultado);*/
 
-        MobileAds.initialize(this);
+
 
         //Interticial
-        interstitialAd = new InterstitialAd(this);
-        //Oficial
-        interstitialAd.setAdUnitId("ca-app-pub-2398950190237031/2397589163");
-        //Teste
-        //interstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
-        interstitialAd.loadAd(new AdRequest.Builder().build());
+
 
         manuais = findViewById(R.id.imgMainManuais);
         manuais.setOnClickListener(new View.OnClickListener() {
@@ -96,10 +91,7 @@ public class MainActivity extends AppCompatActivity {
                     +df.format(result/1000)+"KVAR!\n"
                     +"!Certifique-se de verificar a Tensão do Equipamento!");
 
-                    interstitialAd.loadAd(new AdRequest.Builder().build());
-                    if (interstitialAd.isLoaded()){
-                        interstitialAd.show();
-                    }
+                   //Admob
 
                 }else {
                     Toast.makeText(this, "Digite a Potência o Fator de" +

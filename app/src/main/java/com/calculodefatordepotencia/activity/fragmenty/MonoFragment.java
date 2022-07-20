@@ -5,8 +5,10 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +26,17 @@ import android.widget.Toast;
 import com.calculodefatordepotencia.R;
 
 import java.text.DecimalFormat;
+
+import com.calculodefatordepotencia.activity.activity.CalculadoraDeDesequelibrioDeTensao;
+import com.calculodefatordepotencia.activity.activity.FatorDePotencia;
+import com.calculodefatordepotencia.activity.activity.QuedaDeTensao;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
 import static androidx.core.content.ContextCompat.getSystemService;
 
@@ -51,6 +64,9 @@ public class MonoFragment extends Fragment {
     private int spinerQueda = 0;
     //verificador de tensão trifásica ou monofásica
     private boolean trifasico = true;
+
+    private InterstitialAd mInterstitialAd;
+    private QuedaDeTensao quedaDeTensao;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -107,6 +123,34 @@ public class MonoFragment extends Fragment {
         txtResultado = (TextView)view.findViewById(R.id.txtResultadoQueda);
         limpar = (Button)view.findViewById(R.id.btnLimparQueda);
         calcular = (Button)view.findViewById(R.id.btnCalcularQueda);
+
+
+
+        //Interticial
+        MobileAds.initialize(view.getContext(), new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        InterstitialAd.load(view.getContext(),"ca-app-pub-3940256099942544/1033173712", adRequest,
+                new InterstitialAdLoadCallback() {
+                    @Override
+                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                        // The mInterstitialAd reference will be null until
+                        // an ad is loaded.
+                        mInterstitialAd = interstitialAd;
+                        Log.i("TAG", "onAdLoaded");
+                    }
+
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        // Handle the error
+                        Log.d("TAG", loadAdError.toString());
+                        mInterstitialAd = null;
+                    }
+                });
 
         //Configuração do spiner tipo de condutor
         ArrayAdapter<CharSequence> arrayAdapter = ArrayAdapter.createFromResource(getContext(),
@@ -280,6 +324,7 @@ public class MonoFragment extends Fragment {
                             txtResultado.setText("Necessário um " +
                                     "condutor com aproximadamente " +
                                     "" +result.format(bitola) + "mm²!");
+
                         }
                     }
                 }

@@ -12,6 +12,11 @@
         android:roundIcon="@drawable/icone1"
         android:supportsRtl="true"
         android:theme="@style/Theme.CalculoDeFatorDePotencia">
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-2398950190237031~6700113489" />
+
         <activity
             android:name=".activity.activity.inversores.Mvw3000"
             android:screenOrientation="portrait"></activity>
@@ -105,10 +110,6 @@
             android:label="Desequilíbrio de Tensão"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
-
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-2398950190237031~6700113489" />
 
         <activity
             android:name=".activity.activity.MainActivity"

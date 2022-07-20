@@ -1,5 +1,6 @@
 package com.calculodefatordepotencia.activity.activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -12,9 +13,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.calculodefatordepotencia.R;
+
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
+
 
 import java.text.DecimalFormat;
 
@@ -30,7 +37,7 @@ public class CalculadoraDeDesequelibrioDeTensao extends AppCompatActivity {
     public EditText txtRT;
     public EditText txtTS;
 
-    private InterstitialAd interstitialAd;
+    private InterstitialAd mInterstitialAd;
 
 
     @Override
@@ -45,15 +52,32 @@ public class CalculadoraDeDesequelibrioDeTensao extends AppCompatActivity {
         txtRT = (EditText)findViewById(R.id.txtRT);
         txtTS = (EditText)findViewById(R.id.txtTS);
 
-        MobileAds.initialize(this);
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+        AdRequest adRequest = new AdRequest.Builder().build();
 
-        //Interticial
-        interstitialAd = new InterstitialAd(this);
-        //Oficial
-        interstitialAd.setAdUnitId("ca-app-pub-2398950190237031/2397589163");
-        //Teste
-        //interstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
-        interstitialAd.loadAd(new AdRequest.Builder().build());
+        InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", adRequest,
+                new InterstitialAdLoadCallback() {
+                    @Override
+                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                        // The mInterstitialAd reference will be null until
+                        // an ad is loaded.
+                        mInterstitialAd = interstitialAd;
+                        Log.i("TAG", "onAdLoaded");
+                    }
+
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        // Handle the error
+                        Log.d("TAG", loadAdError.toString());
+                        mInterstitialAd = null;
+                    }
+                });
+
+
     }
 
     public void Limpar(View v){
@@ -83,13 +107,14 @@ public class CalculadoraDeDesequelibrioDeTensao extends AppCompatActivity {
                            "da ANEEL, o desequilibrio maximo aceitavel é de 3% para tensões menores ou iguais a 1.000 " +
                            "Volts e de 2% para tensões entre 1.000 e 230.000 Volts!");
                    EsconderTeclado();
-                   /*interstitialAd.loadAd(new AdRequest.Builder().build());
-                    if (interstitialAd.isLoaded()){
-                        interstitialAd.show();*/
-                   interstitialAd.loadAd(new AdRequest.Builder().build());
-                   if (interstitialAd.isLoaded()){
-                       interstitialAd.show();
+
+                  //AdMob
+                   if (mInterstitialAd != null) {
+                       mInterstitialAd.show(this);
+                   } else {
+                       Log.d("TAG", "The interstitial ad wasn't ready yet.");
                    }
+
 
                }else {
                    Toast.makeText(getApplicationContext(), "Preencha o valor da Tensão TS" +
