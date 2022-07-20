@@ -284,11 +284,7 @@ public class MonoFragment extends Fragment {
 
     }
 
-    public void AbrirManual(){
-        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
-        
 
-    }
 
     public void Calcular(){
 
