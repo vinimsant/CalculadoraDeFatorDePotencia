@@ -28,6 +28,8 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
+import java.io.File;
+
 
 public class ManuaisPdf extends AppCompatActivity{
 
@@ -88,11 +90,13 @@ public class ManuaisPdf extends AppCompatActivity{
         pdfView = (PDFView) findViewById(R.id.pdfview);
 
         //metodo de selecionar a strig do assent
-        selecionarAssent();
+        //selecionarAssent();
 
         // selecionando o pdf através do index
-        pdfView.fromAsset(assentManual)
-                .scrollHandle(new DefaultScrollHandle(this)).load();
+        //pdfView.fromAsset(assentManual)
+        //        .scrollHandle(new DefaultScrollHandle(this)).load();
+        File file = new File(getExternalFilesDir(null), indexManual);
+        pdfView.fromFile(file).scrollHandle(new DefaultScrollHandle(this)).load();
 
 
         
