@@ -35,24 +35,4 @@ public class Download {
         return "false";
 
     }
-
-
-    public void Dialogo(Context context){
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setMessage("mensagem");
-        builder.setTitle("titulo");
-        builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(context, "botão ok", Toast.LENGTH_LONG).show();
-
-            }
-        }).setNegativeButton("cancelar", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(context, "botão cancelar", Toast.LENGTH_LONG).show();
-            }
-        });
-        builder.create().show();
-    }
 }

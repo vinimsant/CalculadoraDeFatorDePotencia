@@ -22,7 +22,7 @@
             app:layout_constraintEnd_toStartOf="@+id/guideline10"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:srcCompat="@drawable/cfw08" />
+            app:srcCompat="@drawable/icone_download" />
 
         <ImageView
             android:id="@+id/cfw09"
@@ -35,7 +35,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline10"
             app:layout_constraintTop_toBottomOf="@+id/textView9"
-            app:srcCompat="@drawable/cfw09" />
+            app:srcCompat="@drawable/icone_download" />
 
         <ImageView
             android:id="@+id/cfw11"
@@ -74,7 +74,7 @@
             app:layout_constraintEnd_toStartOf="@+id/guideline10"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView63"
-            app:srcCompat="@drawable/cfw501" />
+            app:srcCompat="@drawable/icone_download" />
 
         <ImageView
             android:id="@+id/cfw700"
@@ -257,7 +257,7 @@
             app:layout_constraintEnd_toEndOf="@+id/guideline10"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView10"
-            app:srcCompat="@drawable/cfw701"
+            app:srcCompat="@drawable/icone_download"
             android:background="@drawable/custon_image_button_main"
             android:padding="5dp"
             android:layout_gravity="center"/>
@@ -288,7 +288,7 @@
             app:layout_constraintHorizontal_bias="0.509"
             app:layout_constraintStart_toStartOf="@+id/guideline10"
             app:layout_constraintTop_toBottomOf="@+id/textView66"
-            app:srcCompat="@drawable/mvw01" />
+            app:srcCompat="@drawable/icone_download" />
 
         <TextView
             android:id="@+id/textView67"

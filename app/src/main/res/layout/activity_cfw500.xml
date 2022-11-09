@@ -31,7 +31,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline14"
-        app:srcCompat="@drawable/cfw500" />
+        app:srcCompat="@drawable/icone_download" />
 
     <ImageView
         android:id="@+id/cfw500borne"
@@ -41,7 +41,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/cfw500g"
+        app:srcCompat="@drawable/icone_download"
         android:background="@drawable/custon_image_button_main"
         android:layout_gravity="center"
         android:padding="5dp"/>

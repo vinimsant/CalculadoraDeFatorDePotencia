@@ -9,6 +9,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.database.Cursor;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -16,6 +17,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.calculodefatordepotencia.R;
@@ -32,6 +34,11 @@ public class InveroresABB extends AppCompatActivity {
 
     //BrodCast do dwnload
     private long downloadId;
+    // dialogo de download em andamento
+    AlertDialog dialog;
+    //teste para o icone do botao do manual se foi baixado
+    String nomeArquivo = "";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,24 +47,39 @@ public class InveroresABB extends AppCompatActivity {
 
         setTitle("Inversores ABB");
 
-        File file = new File(getExternalFilesDir(null), "abb pse.pdf");
         acs150 = findViewById(R.id.imginvacs150);
-        if (file.exists()){
-            acs150.setImageResource(R.drawable.acs150);
-        }
         acs350 = findViewById(R.id.imginvacs350);
         acs550 = findViewById(R.id.imginvacs550);
         acs800 = findViewById(R.id.imginvacs800);
+
+        //registrando broad cast
+        registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+
+        File fileAcss150 = new File(getExternalFilesDir(null), "abb_acs150.pdf");
+        File fileAcss350 = new File(getExternalFilesDir(null), "abb_acs350.pdf");
+        File fileAcss550 = new File(getExternalFilesDir(null), "abb_acs550.pdf");
+        File fileAcss800 = new File(getExternalFilesDir(null), "abb_acs800.pdf");
+
+        if (fileAcss150.exists()){
+            acs150.setImageResource(R.drawable.acs150);
+        }
+        if (fileAcss350.exists()){
+            acs350.setImageResource(R.drawable.acs355);
+        }
+        if (fileAcss550.exists()){
+            acs550.setImageResource(R.drawable.acs550);
+        }
+        if (fileAcss800.exists()){
+            acs800.setImageResource(R.drawable.acs800);
+        }
+
 
         acs150.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                /*Intent intent = new Intent(getApplicationContext(), ManuaisPdf.class);
-                intent.putExtra("indexManual", "acs150");
-                startActivity(intent);*/
-                String nomeArquivo = "abb pse.pdf";
-                String url = "https://drive.google.com/u/0/uc?id=1-JOnKy7ZBbTXDT5tF6_1bFQJ7THM-NNW&export=download";
+                nomeArquivo = "abb_acs150.pdf";
+                String url = "https://"+"drive.google.com/u/0/uc?id=1NHyIXe_Rs2ZFXf7Itjc3ZItZA3EGA0kD&export=download";
                 File file = new File(getExternalFilesDir(null), nomeArquivo);
 
                 //Instancia da classe para testar se o arquivo já foi baixado
@@ -87,9 +109,30 @@ public class InveroresABB extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(getApplicationContext(), ManuaisPdf.class);
-                intent.putExtra("indexManual", "acs355");
-                startActivity(intent);
+                nomeArquivo = "abb_acs350.pdf";
+                String url = "https://"+"drive.google.com/u/0/uc?id=1U_l3pj8irfQPHhDvutByn23iBAEnWe9Y&export=download";
+                File file = new File(getExternalFilesDir(null), nomeArquivo);
+
+                //Instancia da classe para testar se o arquivo já foi baixado
+                Download download = new Download();
+                String texteConexao = download.TesteConexao(getBaseContext());
+                if (file.exists()){
+                    Intent intent = new Intent(getApplicationContext(), ManuaisPdf.class);
+                    intent.putExtra("indexManual", nomeArquivo);
+                    startActivity(intent);
+                }else if (!file.exists()){
+                    if (texteConexao == "wifi"){
+                        Download(nomeArquivo, url, file);
+                    }else if (texteConexao == "dados moveis"){
+                        //Chamar dialogo para autorizar o download pelos dados moveis
+                        Dialogo(nomeArquivo, url, file);
+
+                    }else if (texteConexao == "false"){
+                        Toast.makeText(getBaseContext(), "Dispositivo sem conexão!\n" +
+                                "Por favor ative o wi-fi ou os dados moveis para realizar o Download " +
+                                "do Manual!", Toast.LENGTH_LONG).show();
+                    }
+                }
             }
         });
 
@@ -97,9 +140,30 @@ public class InveroresABB extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(getApplicationContext(), ManuaisPdf.class);
-                intent.putExtra("indexManual", "acs550");
-                startActivity(intent);
+                nomeArquivo = "abb_acs550.pdf";
+                String url = "https://"+"drive.google.com/u/0/uc?id=10NdJ3eyq0VjWoP0Ab36fZMAne_-98GRx&export=download";
+                File file = new File(getExternalFilesDir(null), nomeArquivo);
+
+                //Instancia da classe para testar se o arquivo já foi baixado
+                Download download = new Download();
+                String texteConexao = download.TesteConexao(getBaseContext());
+                if (file.exists()){
+                    Intent intent = new Intent(getApplicationContext(), ManuaisPdf.class);
+                    intent.putExtra("indexManual", nomeArquivo);
+                    startActivity(intent);
+                }else if (!file.exists()){
+                    if (texteConexao == "wifi"){
+                        Download(nomeArquivo, url, file);
+                    }else if (texteConexao == "dados moveis"){
+                        //Chamar dialogo para autorizar o download pelos dados moveis
+                        Dialogo(nomeArquivo, url, file);
+
+                    }else if (texteConexao == "false"){
+                        Toast.makeText(getBaseContext(), "Dispositivo sem conexão!\n" +
+                                "Por favor ative o wi-fi ou os dados moveis para realizar o Download " +
+                                "do Manual!", Toast.LENGTH_LONG).show();
+                    }
+                }
             }
         });
 
@@ -107,28 +171,32 @@ public class InveroresABB extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(getApplicationContext(), ManuaisPdf.class);
-                intent.putExtra("indexManual", "acs800");
-                startActivity(intent);
+                nomeArquivo = "abb_acs800.pdf";
+                String url = "https://"+"drive.google.com/u/0/uc?id=1MeSFfIqStFD23fCPPsAfop4JyBObEixQ&export=download";
+                File file = new File(getExternalFilesDir(null), nomeArquivo);
+
+                //Instancia da classe para testar se o arquivo já foi baixado
+                Download download = new Download();
+                String texteConexao = download.TesteConexao(getBaseContext());
+                if (file.exists()){
+                    Intent intent = new Intent(getApplicationContext(), ManuaisPdf.class);
+                    intent.putExtra("indexManual", nomeArquivo);
+                    startActivity(intent);
+                }else if (!file.exists()){
+                    if (texteConexao == "wifi"){
+                        Download(nomeArquivo, url, file);
+                    }else if (texteConexao == "dados moveis"){
+                        //Chamar dialogo para autorizar o download pelos dados moveis
+                        Dialogo(nomeArquivo, url, file);
+
+                    }else if (texteConexao == "false"){
+                        Toast.makeText(getBaseContext(), "Dispositivo sem conexão!\n" +
+                                "Por favor ative o wi-fi ou os dados moveis para realizar o Download " +
+                                "do Manual!", Toast.LENGTH_LONG).show();
+                    }
+                }
             }
         });
-    }
-
-    private BroadcastReceiver onDownloadComplet = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            long id = intent.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1);
-            if (downloadId==id){
-                acs150.setImageResource(R.drawable.acs150);
-                Toast.makeText(getBaseContext(), "Download completo", Toast.LENGTH_LONG).show();
-            }
-        }
-    };
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        unregisterReceiver(onDownloadComplet);
     }
 
     private void Download(String nomeArquivo, String url, File file){
@@ -143,38 +211,31 @@ public class InveroresABB extends AppCompatActivity {
         }
         DownloadManager downloadManager = (DownloadManager)getSystemService(DOWNLOAD_SERVICE);
         downloadId = downloadManager.enqueue(request);
-        DownloadManager.Query status = new DownloadManager.Query();
-        status.setFilterById(downloadId);
-        Cursor cursor = downloadManager.query(status);
-        cursor.moveToFirst();
-        boolean isDownloading = true;
-        int totalBytesDownloaded, totalBytes, downloadStatus;
+        DialogoEspereDownload();
+
+        //codigo teste de dilog progress
+        /*DownloadManager.Query query = new DownloadManager.Query();
+        query.setFilterById(downloadId);
+        DownloadManager d =(DownloadManager)getSystemService(DOWNLOAD_SERVICE);
+        Cursor cursor = d.query(query);
+        //progress dialogo
         ProgressDialog prog = new ProgressDialog(this);
         prog.setTitle("titulo");
         prog.setMessage("mensagem");
         prog.setMax(100);
         prog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
         prog.show();
-        int i = 0;
+        if (cursor.moveToFirst()){
+            int colunIndex = cursor.getColumnIndex(DownloadManager.COLUMN_STATUS);
+            int statusInt = cursor.getInt(colunIndex);
+            int indexSofar = cursor.getColumnIndex(DownloadManager.COLUMN_BYTES_DOWNLOADED_SO_FAR);
+            int soFar = cursor.getInt(indexSofar);
+            int indexTotal = cursor.getColumnIndex(DownloadManager.COLUMN_TOTAL_SIZE_BYTES);
+            int total = cursor.getInt(indexTotal);
+            prog.setProgress(soFar);
+        }*/
 
         //https://www.youtube.com/watch?v=hJZq6InFlW4
-
-        while (isDownloading) {
-            prog.setProgress(i);
-            i++;
-            totalBytes = Integer.parseInt(String.valueOf(
-                    cursor.getColumnIndex(DownloadManager.COLUMN_TOTAL_SIZE_BYTES)));
-            totalBytesDownloaded = Integer.parseInt(String.valueOf(
-                    cursor.getColumnIndex(DownloadManager.COLUMN_BYTES_DOWNLOADED_SO_FAR)));
-            downloadStatus = Integer.parseInt(String.valueOf(
-                    cursor.getColumnIndex(DownloadManager.COLUMN_STATUS)));
-            //prog.setProgress(totalBytesDownloaded*100/totalBytes);
-
-
-            if (downloadStatus == DownloadManager.STATUS_SUCCESSFUL) {
-                isDownloading = false;
-            }
-        }
 
     }
 
@@ -196,5 +257,71 @@ public class InveroresABB extends AppCompatActivity {
         });
         AlertDialog dialog =    builder.create();
         dialog.show();
+    }
+
+    private void DialogoEspereDownload(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Por favor espere o Download terminar!\nVocê pode " +
+                "acompanhar o progresso do download pela barra de notificações!");
+        builder.setTitle("Download em Andamento");
+        builder.setCancelable(false);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        dialog = builder.create();
+        dialog.show();
+    }
+
+    private BroadcastReceiver onDownloadComplet = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            long id = intent.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1);
+
+            DownloadManager.Query query = new DownloadManager.Query();
+            query.setFilterById(downloadId);
+            DownloadManager d =(DownloadManager)getSystemService(DOWNLOAD_SERVICE);
+            Cursor cursor = d.query(query);
+            int indexStatus = 0, status = 0;
+            if (cursor.moveToFirst()){
+                indexStatus = cursor.getColumnIndex(DownloadManager.COLUMN_STATUS);
+                status = cursor.getInt(indexStatus);
+            }
+
+            if (downloadId==id){
+                //Toast.makeText(getBaseContext(), "Download completo", Toast.LENGTH_LONG).show();
+
+                if (DownloadManager.STATUS_SUCCESSFUL == status) {
+                    Toast.makeText(getBaseContext(), "Download completo", Toast.LENGTH_LONG).show();
+                    dialog.dismiss();
+                    switch (nomeArquivo){
+                        case "abb_acs150.pdf":
+                            acs150.setImageResource(R.drawable.acs150);
+                            break;
+                        case "abb_acs350.pdf":
+                            acs350.setImageResource(R.drawable.acs355);
+                            break;
+                        case "abb_acs550.pdf":
+                            acs550.setImageResource(R.drawable.acs550);
+                            break;
+                        case "abb_acs800.pdf":
+                            acs800.setImageResource(R.drawable.acs800);
+                            break;
+                    }
+                }
+                if (DownloadManager.STATUS_FAILED == status) {
+                    Toast.makeText(getBaseContext(), "download cancelado", Toast.LENGTH_LONG).show();
+                }
+                }
+
+            }
+    };
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(onDownloadComplet);
     }
 }

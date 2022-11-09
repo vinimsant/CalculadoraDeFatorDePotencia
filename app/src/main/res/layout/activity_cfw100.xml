@@ -17,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline13"
-        app:srcCompat="@drawable/cfw100" />
+        app:srcCompat="@drawable/icone_download" />
 
     <TextView
         android:id="@+id/textView65"
@@ -41,7 +41,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/cfw100guia"
+        app:srcCompat="@drawable/icone_download"
         android:background="@drawable/custon_image_button_main"
         android:padding="5dp"
         android:layout_gravity="center"/>

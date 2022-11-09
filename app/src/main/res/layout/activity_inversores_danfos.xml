@@ -86,7 +86,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline23"
-        app:srcCompat="@drawable/fc202" />
+        app:srcCompat="@drawable/icone_download" />
 
     <ImageView
         android:id="@+id/ImgInvFc101"
@@ -99,5 +99,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline19"
-        app:srcCompat="@drawable/fc101m" />
+        app:srcCompat="@drawable/icone_download" />
 </androidx.constraintlayout.widget.ConstraintLayout>

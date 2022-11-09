@@ -17,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/vacon10" />
+        app:srcCompat="@drawable/icone_download" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline26"
@@ -44,7 +44,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline26"
-        app:srcCompat="@drawable/vacon20" />
+        app:srcCompat="@drawable/icone_download" />
 
     <ImageView
         android:id="@+id/ImgInvVacon100"
@@ -57,7 +57,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline27"
-        app:srcCompat="@drawable/vacon100" />
+        app:srcCompat="@drawable/icone_download" />
 
     <TextView
         android:id="@+id/textView33"
