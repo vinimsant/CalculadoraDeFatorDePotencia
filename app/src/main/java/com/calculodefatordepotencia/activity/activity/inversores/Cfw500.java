@@ -136,8 +136,7 @@ public class Cfw500 extends AppCompatActivity {
 
     private void Dialogo(String nomeArquivo, String url, File file){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("O download pelos dados moveis pode gerá custos!\n" +
-                "Deseja fazer o Download mesmo assim?");
+        builder.setMessage(R.string.dialogo_dados_moveis);
         builder.setTitle("O wi-fi está desconectado!");
         builder.setPositiveButton("Download", new DialogInterface.OnClickListener() {
             @Override

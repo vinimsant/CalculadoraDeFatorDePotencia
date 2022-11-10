@@ -14,7 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ssw05"
+        app:srcCompat="@drawable/icone_download"
         android:background="@drawable/custon_image_button_main"
         android:padding="12dp"/>
 
@@ -46,7 +46,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline31"
-        app:srcCompat="@drawable/ssw07"
+        app:srcCompat="@drawable/icone_download"
         android:background="@drawable/custon_image_button_main"
         android:padding="12dp"/>
 
@@ -58,7 +58,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline32"
-        app:srcCompat="@drawable/ssw900"
+        app:srcCompat="@drawable/icone_download"
         android:background="@drawable/custon_image_button_main"
         android:padding="12dp"/>
 

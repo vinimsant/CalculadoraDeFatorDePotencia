@@ -27,7 +27,7 @@
             android:padding="6dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgMainManuais"
             app:srcCompat="@drawable/banco2" />
 
         <ImageView
@@ -48,9 +48,11 @@
             android:layout_width="350dp"
             android:layout_height="150dp"
             android:layout_marginTop="60dp"
+            android:layout_marginBottom="60dp"
             android:background="@drawable/custon_image_button_main"
             android:onClick="ChamarQueda"
             android:padding="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView5"
@@ -61,14 +63,12 @@
             android:layout_width="350dp"
             android:layout_height="150dp"
             android:layout_marginTop="60dp"
-            android:layout_marginBottom="60dp"
             android:background="@drawable/custon_image_button_main"
             android:elevation="10dp"
             android:padding="6dp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView7"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/manuais2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

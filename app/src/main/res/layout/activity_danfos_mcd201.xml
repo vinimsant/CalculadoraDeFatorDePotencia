@@ -24,7 +24,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/mcd201" />
+        app:srcCompat="@drawable/icone_download" />
 
     <ImageView
         android:id="@+id/ImgMcd201G"
@@ -37,7 +37,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline41"
-        app:srcCompat="@drawable/mcd201guia" />
+        app:srcCompat="@drawable/icone_download" />
 
     <TextView
         android:id="@+id/textView59"

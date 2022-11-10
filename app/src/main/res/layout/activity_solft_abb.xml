@@ -17,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/abb_psr" />
+        app:srcCompat="@drawable/icone_download" />
 
     <ImageView
         android:id="@+id/ImgPse"
@@ -30,7 +30,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline11"
-        app:srcCompat="@drawable/abb_pse" />
+        app:srcCompat="@drawable/icone_download" />
 
     <ImageView
         android:id="@+id/ImgPst"
@@ -43,7 +43,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline15"
-        app:srcCompat="@drawable/abb_pst" />
+        app:srcCompat="@drawable/icone_download" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline11"
