@@ -48,7 +48,7 @@ public class SolftScheneider extends AppCompatActivity {
         ats48 = findViewById(R.id.ImgAts48);
 
         //registrando broad cast
-        registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+        //registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 
         File fileAts01 = new File(getExternalFilesDir(null), "ats01.pdf");
         File fileAts22 = new File(getExternalFilesDir(null), "ATS22-Manual do Usuario-BR.pdf");
@@ -250,9 +250,5 @@ public class SolftScheneider extends AppCompatActivity {
         }
     };
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        unregisterReceiver(onDownloadComplet);
-    }
+
 }

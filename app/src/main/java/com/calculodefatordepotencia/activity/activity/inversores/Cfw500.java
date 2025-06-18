@@ -45,7 +45,7 @@ public class Cfw500 extends AppCompatActivity {
         imgCfw500Guia = findViewById(R.id.cfw500borne);
 
         //registrando broad cast
-        registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+        //registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 
         File fileBornes = new File(getExternalFilesDir(null), "Manual-do-Usuário-CFW500-regua de borne.pdf");
         File fileManual = new File(getExternalFilesDir(null), "WEG-cfw500-manual-de-programacao-10001469555-1.1x-manual-portugues-br.pdf");
@@ -208,9 +208,5 @@ public class Cfw500 extends AppCompatActivity {
         }
     };
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        unregisterReceiver(onDownloadComplet);
-    }
+
 }

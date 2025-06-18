@@ -43,7 +43,7 @@ public class Cfw11 extends AppCompatActivity {
         imgBornes = findViewById(R.id.cfw11borne);
 
         //registrando broad cast
-        registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+        //registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 
         File fileBornes = new File(getExternalFilesDir(null), "WEG-cfw11-manual-do-usuario-manual-portugues-br_regua de bornes.pdf");
         File fileManual = new File(getExternalFilesDir(null), "Manual WEG CFW11_portugues.pdf");
@@ -208,9 +208,5 @@ public class Cfw11 extends AppCompatActivity {
         }
     };
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        unregisterReceiver(onDownloadComplet);
-    }
+
 }

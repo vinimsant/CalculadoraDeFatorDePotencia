@@ -53,7 +53,7 @@ public class InveroresABB extends AppCompatActivity {
         acs800 = findViewById(R.id.imginvacs800);
 
         //registrando broad cast
-        registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+        //registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 
         File fileAcss150 = new File(getExternalFilesDir(null), "abb_acs150.pdf");
         File fileAcss350 = new File(getExternalFilesDir(null), "abb_acs350.pdf");
@@ -318,9 +318,9 @@ public class InveroresABB extends AppCompatActivity {
             }
     };
 
-    @Override
+    /*@Override
     protected void onDestroy() {
         super.onDestroy();
         unregisterReceiver(onDownloadComplet);
-    }
+    }*/
 }

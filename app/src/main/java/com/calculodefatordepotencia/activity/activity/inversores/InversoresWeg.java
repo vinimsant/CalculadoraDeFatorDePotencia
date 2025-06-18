@@ -66,7 +66,6 @@ public class InversoresWeg extends AppCompatActivity {
         mvw3000 = findViewById(R.id.mvw3000);
 
         //registrando broad cast
-        registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 
         //cfw8, cfw9, cfw501, cfw701, mvw01
         File fileCfw08 = new File(getExternalFilesDir(null), "Manual-do-Usuario-CFW08.pdf");
@@ -421,9 +420,9 @@ public class InversoresWeg extends AppCompatActivity {
         }
     };
 
-    @Override
+    /*@Override
     protected void onDestroy() {
         super.onDestroy();
         unregisterReceiver(onDownloadComplet);
-    }
+    }*/
 }

@@ -47,7 +47,7 @@ public class InversoresSiemens extends AppCompatActivity {
         mm440 = findViewById(R.id.InvImgMM440);
 
         //registrando broad cast
-        registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+        //registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 
         File fileMm420 = new File(getExternalFilesDir(null), "siemens_mm420.pdf");
         File fileMm430 = new File(getExternalFilesDir(null), "micromaster430_ingles.pdf");
@@ -220,9 +220,9 @@ public class InversoresSiemens extends AppCompatActivity {
         }
     };
 
-    @Override
+    /*@Override
     protected void onDestroy() {
         super.onDestroy();
         unregisterReceiver(onDownloadComplet);
-    }
+    }*/
 }

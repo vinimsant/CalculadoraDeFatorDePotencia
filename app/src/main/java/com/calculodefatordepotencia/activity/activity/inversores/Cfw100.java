@@ -44,7 +44,7 @@ public class Cfw100 extends AppCompatActivity {
         setTitle("cfw 100");
 
         //registrando broad cast
-        registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+        //registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 
         File fileBornes = new File(getExternalFilesDir(null), "cfw100guia.pdf");
         File fileManual = new File(getExternalFilesDir(null), "cfw100.pdf");
@@ -207,9 +207,5 @@ public class Cfw100 extends AppCompatActivity {
         }
     };
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        unregisterReceiver(onDownloadComplet);
-    }
+
 }

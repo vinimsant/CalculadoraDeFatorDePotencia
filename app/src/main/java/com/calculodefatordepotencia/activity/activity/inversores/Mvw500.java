@@ -45,7 +45,7 @@ public class Mvw500 extends AppCompatActivity {
         bornes = findViewById(R.id.mvw500borne);
 
         //registrando broad cast
-        registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+        //registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 
         File fileBornes = new File(getExternalFilesDir(null), "mvw500guia.pdf");
         File fileManual = new File(getExternalFilesDir(null), "mvw500.pdf");
@@ -209,9 +209,5 @@ public class Mvw500 extends AppCompatActivity {
         }
     };
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        unregisterReceiver(onDownloadComplet);
-    }
+
 }

@@ -2,6 +2,7 @@ package com.calculodefatordepotencia.activity.activity;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.os.Bundle;
 import android.view.View;
@@ -30,11 +31,12 @@ public class manuais1_0 extends AppCompatActivity {
         solft = findViewById(R.id.btnSoltManuais1_0);
         inv.setElevation(0);
         solft.setElevation(100);
-        inv.setTextColor(getResources().getColor(R.color.black));
-        solft.setTextColor(getResources().getColor(R.color.white));
+        inv.setTextColor(ContextCompat.getColor(getBaseContext(), R.color.black));
+        solft.setTextColor(ContextCompat.getColor(getBaseContext(), R.color.white));
 
         //configurando a action bar
         actionBar = this.getSupportActionBar();
+        assert actionBar != null;
         actionBar.setTitle("Inversores");
         //actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.gradient));
 
@@ -45,8 +47,8 @@ public class manuais1_0 extends AppCompatActivity {
                 .commit();
         inv.setElevation(100);
         solft.setElevation(0);
-        inv.setTextColor(getResources().getColor(R.color.white));
-        solft.setTextColor(getResources().getColor(R.color.black));
+        inv.setTextColor(ContextCompat.getColor(getBaseContext(), R.color.white));
+        solft.setTextColor(ContextCompat.getColor(getBaseContext(), R.color.black));
         actionBar.setTitle("SolftStarteres");
     }
 
@@ -55,8 +57,8 @@ public class manuais1_0 extends AppCompatActivity {
                 .commit();
         inv.setElevation(0);
         solft.setElevation(100);
-        inv.setTextColor(getResources().getColor(R.color.black));
-        solft.setTextColor(getResources().getColor(R.color.white));
+        inv.setTextColor(ContextCompat.getColor(getBaseContext(), R.color.black));
+        solft.setTextColor(ContextCompat.getColor(getBaseContext(), R.color.white));
         actionBar.setTitle("Inversores");
     }
 }

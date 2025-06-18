@@ -6,10 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".activity.activity.ManuaisPdf">
 
+    <!--
     <com.github.barteksc.pdfviewer.PDFView
         android:id="@+id/pdfview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+        -->
 
 
 </RelativeLayout>

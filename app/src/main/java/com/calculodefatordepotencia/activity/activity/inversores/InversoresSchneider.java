@@ -66,7 +66,7 @@ public class InversoresSchneider extends AppCompatActivity {
         atv630 = findViewById(R.id.mImgInvAtv630);
 
         //registrando broad cast
-        registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+        //registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 
         File fileAtv11 = new File(getExternalFilesDir(null), "ATV11.pdf");
         File fileAtv12 = new File(getExternalFilesDir(null), "atv12.pdf");
@@ -623,9 +623,5 @@ public class InversoresSchneider extends AppCompatActivity {
         }
     };
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        unregisterReceiver(onDownloadComplet);
-    }
+
 }

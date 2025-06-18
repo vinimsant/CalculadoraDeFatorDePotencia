@@ -47,7 +47,7 @@ public class InversoresVacon extends AppCompatActivity {
         vacon100 = findViewById(R.id.ImgInvVacon100);
 
         //registrando broad cast
-        registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+        //registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 
         File fileVacon10 = new File(getExternalFilesDir(null), "vacon10.pdf");
         File fileVacon20 = new File(getExternalFilesDir(null), "vacon20.pdf");
@@ -248,9 +248,5 @@ public class InversoresVacon extends AppCompatActivity {
         }
     };
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        unregisterReceiver(onDownloadComplet);
-    }
+
 }

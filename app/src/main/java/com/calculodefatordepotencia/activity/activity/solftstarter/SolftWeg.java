@@ -48,7 +48,7 @@ public class SolftWeg extends AppCompatActivity {
         ssw900 = findViewById(R.id.ssw900);
 
         //registrando broad cast
-        registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+        //registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 
         File fileSsw05 = new File(getExternalFilesDir(null), "ssw05 manual de usuarios.pdf");
         File fileSsw07 = new File(getExternalFilesDir(null), "ssw07-08.pdf");
@@ -251,9 +251,5 @@ public class SolftWeg extends AppCompatActivity {
         }
     };
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        unregisterReceiver(onDownloadComplet);
-    }
+
 }

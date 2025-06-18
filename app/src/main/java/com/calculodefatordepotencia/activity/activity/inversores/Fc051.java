@@ -46,7 +46,8 @@ public class Fc051 extends AppCompatActivity {
         manual = findViewById(R.id.ImgFc051M);
 
         //registrando broad cast
-        registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+
+        //registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 
         File fileFc51B = new File(getExternalFilesDir(null), "fc051_regua_de_bornes.pdf");
         File fileFc51M = new File(getExternalFilesDir(null), "fc051.pdf");
@@ -212,9 +213,9 @@ public class Fc051 extends AppCompatActivity {
         }
     };
 
-    @Override
+    /*@Override
     protected void onDestroy() {
         super.onDestroy();
         unregisterReceiver(onDownloadComplet);
-    }
+    }*/
 }

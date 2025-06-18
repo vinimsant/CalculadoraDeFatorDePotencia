@@ -46,7 +46,7 @@ public class DanfosMcd201 extends AppCompatActivity {
         mcd201b = findViewById(R.id.ImgMcd201G);
 
         //registrando broad cast
-        registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+        //registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 
         File fileBornes = new File(getExternalFilesDir(null), "guia mcd 201-202.pdf");
         File fileManual = new File(getExternalFilesDir(null), "manual mcd 201-2202.pdf");
@@ -209,9 +209,5 @@ public class DanfosMcd201 extends AppCompatActivity {
         }
     };
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        unregisterReceiver(onDownloadComplet);
-    }
+
 }

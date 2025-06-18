@@ -48,7 +48,7 @@ public class SolftAbb extends AppCompatActivity {
         pst = findViewById(R.id.ImgPst);
 
         //registrando broad cast
-        registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+        //registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 
         File filePsr = new File(getExternalFilesDir(null), "abb psr.pdf");
         File filePse = new File(getExternalFilesDir(null), "abb pse.pdf");
@@ -250,9 +250,5 @@ public class SolftAbb extends AppCompatActivity {
         }
     };
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        unregisterReceiver(onDownloadComplet);
-    }
+
 }

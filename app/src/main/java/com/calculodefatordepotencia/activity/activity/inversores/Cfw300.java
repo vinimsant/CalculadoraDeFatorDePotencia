@@ -45,7 +45,7 @@ public class Cfw300 extends AppCompatActivity {
         bornes = findViewById(R.id.cfw300borne);
 
         //registrando broad cast
-        registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+        //registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 
         File fileBornes = new File(getExternalFilesDir(null), "guiaCfw300.pdf");
         File fileManual = new File(getExternalFilesDir(null), "manualCfw300.pdf");
@@ -208,9 +208,5 @@ public class Cfw300 extends AppCompatActivity {
         }
     };
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        unregisterReceiver(onDownloadComplet);
-    }
+
 }

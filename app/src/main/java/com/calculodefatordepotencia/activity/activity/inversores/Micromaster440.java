@@ -45,7 +45,7 @@ public class Micromaster440 extends AppCompatActivity {
         mm440m = findViewById(R.id.InvImgMM440M);
 
         //registrando broad cast
-        registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+        //registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 
         File fileMm440b = new File(getExternalFilesDir(null), "micromaster_440_guia_com_regua_de_bornes.pdf");
         File fileMm440m = new File(getExternalFilesDir(null), "micromaster440_manual_de_programacao.pdf");
@@ -209,9 +209,5 @@ public class Micromaster440 extends AppCompatActivity {
         }
     };
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        unregisterReceiver(onDownloadComplet);
-    }
+
 }

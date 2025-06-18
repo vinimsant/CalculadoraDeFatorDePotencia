@@ -50,7 +50,7 @@ public class SolftDanfos extends AppCompatActivity {
         mcd600 = findViewById(R.id.ImgMcd600);
 
         //registrando broad cast
-        registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+        //registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 
         File fileMdc100 = new File(getExternalFilesDir(null), "mcd100.pdf");
         File fileMdc500 = new File(getExternalFilesDir(null), "mcd500.pdf");
@@ -259,9 +259,5 @@ public class SolftDanfos extends AppCompatActivity {
         }
     };
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        unregisterReceiver(onDownloadComplet);
-    }
+
 }

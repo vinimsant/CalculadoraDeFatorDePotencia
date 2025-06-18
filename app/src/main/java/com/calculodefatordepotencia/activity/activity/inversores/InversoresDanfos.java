@@ -47,7 +47,6 @@ public class InversoresDanfos extends AppCompatActivity {
         fc202 = findViewById(R.id.ImgInvFc202);
 
         //registrando broad cast
-        registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 
         File fileFc101 = new File(getExternalFilesDir(null), "fc101.pdf");
         File fileFc202 = new File(getExternalFilesDir(null), "fc202.pdf");
@@ -219,9 +218,9 @@ public class InversoresDanfos extends AppCompatActivity {
         }
     };
 
-    @Override
+    /*@Override
     protected void onDestroy() {
         super.onDestroy();
         unregisterReceiver(onDownloadComplet);
-    }
+    }*/
 }

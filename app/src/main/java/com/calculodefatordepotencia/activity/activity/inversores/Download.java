@@ -6,6 +6,8 @@ import android.app.DownloadManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkCapabilities;
 import android.net.Uri;
 import android.os.Build;
 import android.widget.Toast;
@@ -16,7 +18,7 @@ public class Download {
 
 
 
-    public String TesteConexao(Context cont){
+    /*public String TesteConexao(Context cont){
 
         ConnectivityManager connectivityManager = (ConnectivityManager)cont.getSystemService(Context.CONNECTIVITY_SERVICE);
         if (connectivityManager != null){
@@ -34,5 +36,27 @@ public class Download {
         //Caso não tenha internet retorna falso
         return "false";
 
+    }*/
+    public String TesteConexao(Context context) {
+        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        if (connectivityManager != null) {
+            Network network = connectivityManager.getActiveNetwork();
+            if (network == null) return "false"; // Sem conexão ativa
+
+            NetworkCapabilities capabilities = connectivityManager.getNetworkCapabilities(network);
+            if (capabilities == null) return "false";
+
+            if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)) {
+                return "wifi";
+            } else if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)) {
+                return "dados moveis";
+            } else {
+                return "outro";
+            }
+        }
+
+        return "false";
     }
+
 }

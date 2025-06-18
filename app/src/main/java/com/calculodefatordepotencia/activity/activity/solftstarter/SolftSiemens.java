@@ -53,7 +53,7 @@ public class SolftSiemens extends AppCompatActivity {
         img3rw55 = findViewById(R.id.img3rw55);
 
         //registrando broad cast
-        registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+        //registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 
         File file3r30 = new File(getExternalFilesDir(null), "siemens_3RW30_3RW40_pt-BR.pdf");
         File file3r44 = new File(getExternalFilesDir(null), "siemens_3rw44_pt-BR.pdf");
@@ -332,9 +332,5 @@ public class SolftSiemens extends AppCompatActivity {
         }
     };
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        unregisterReceiver(onDownloadComplet);
-    }
+
 }

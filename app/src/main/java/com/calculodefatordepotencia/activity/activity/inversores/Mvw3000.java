@@ -45,7 +45,7 @@ public class Mvw3000 extends AppCompatActivity {
         borne = findViewById(R.id.mvw3000borne);
 
         //registrando broad cast
-        registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
+        //registerReceiver(onDownloadComplet, new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 
         File fileBornes = new File(getExternalFilesDir(null), "mvw3000guia.pdf");
         File fileManual = new File(getExternalFilesDir(null), "mvw3000.pdf");
@@ -209,9 +209,9 @@ public class Mvw3000 extends AppCompatActivity {
         }
     };
 
-    @Override
+    /*@Override
     protected void onDestroy() {
         super.onDestroy();
         unregisterReceiver(onDownloadComplet);
-    }
+    }*/
 }
