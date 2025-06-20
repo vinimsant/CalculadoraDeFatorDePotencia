@@ -14,10 +14,13 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Base64;
 import android.util.Log;
 import android.view.ContentInfo;
 import android.view.OnReceiveContentListener;
 import android.view.View;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Switch;
 import android.widget.Toast;
 
@@ -27,6 +30,7 @@ import com.calculodefatordepotencia.R;
 //import com.github.barteksc.pdfviewer.scroll.DefaultScrollHandle;
 
 //admob
+import com.calculodefatordepotencia.classes.AbrirPDF;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.MobileAds;
@@ -35,7 +39,11 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -54,37 +62,10 @@ public class ManuaisPdf extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manuais_pdf);
 
+        //encontrar webview
 
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
-        });
-        AdRequest adRequest = new AdRequest.Builder().build();
 
-        InterstitialAd.load(this,"ca-app-pub-2398950190237031/9730209615", adRequest,
-                new InterstitialAdLoadCallback() {
-                    @Override
-                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
-                        // The mInterstitialAd reference will be null until
-                        // an ad is loaded.
-                        mInterstitialAd = interstitialAd;
-                        Log.i("ADMOB", "onAdLoaded");
-                        if (mInterstitialAd != null) {
-                            mInterstitialAd.show(ManuaisPdf.this);
-                            Log.d("ADMOB", "o interticial foi chamado");
-                        } else {
-                            Log.d("ADMOB", "The interstitial ad wasn't ready yet.");
-                        }
-                    }
 
-                    @Override
-                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                        // Handle the error
-                        Log.d("ADMOB", loadAdError.toString());
-                        mInterstitialAd = null;
-                    }
-                });
 
 
 
@@ -97,63 +78,10 @@ public class ManuaisPdf extends AppCompatActivity{
 
         setTitle(indexManual);
 
-        // recuperando o pdfviewr
-        //pdfView = (PDFView) findViewById(R.id.pdfview);
-
-        //metodo de selecionar a strig do assent
-        //selecionarAssent();
-
-        // selecionando o pdf através do index
-        //pdfView.fromAsset(assentManual)
-        //        .scrollHandle(new DefaultScrollHandle(this)).load();
-        File file = new File(getExternalFilesDir(null), indexManual);
-
-        AlertDialog.Builder dialogSelecaoAbrirPDF = new AlertDialog.Builder(this);
-        dialogSelecaoAbrirPDF.setTitle("Seleção de APP para Abrir o Arquivo");
-        dialogSelecaoAbrirPDF.setMessage("Como deseja exibir o manual?");
-        dialogSelecaoAbrirPDF.setCancelable(false);
-        //botões
-        dialogSelecaoAbrirPDF.setPositiveButton("Aplicativo do sistema", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                /*String nomeFile = Environment.getExternalStorageDirectory().toString();
-                File f = new File(nomeFile);
-                Intent target = new Intent(Intent.ACTION_VIEW);
-                target.setDataAndType(Uri.fromFile(f), "application/pdf");
-
-                Intent intent = Intent.createChooser(target, "Abrir arquivo");*/
-
-                String patch = "storage/emulated/0/Android/data/com.calculodefatordepotencia/files/"+indexManual;
-                File nf = new File(patch);
-                //função para solicitar android um app para abrir o pdf
-                abrirPDF(getApplicationContext(), nf);
-
-                /*Uri uri = FileProvider.getUriForFile(getApplicationContext(), getApplicationContext().getPackageName() + ".provider", nf);
-                Intent it = new Intent();
-                it.setAction(android.content.Intent.ACTION_VIEW);
-                it.setDataAndType(uri, "aplication/pdf");
-                it.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-
-                try {
-                    startActivity(it);
-                }catch (Exception e){
-                    Log.d("exeção", "gerada a exeção "+e+" ao tentar abrir o arquivo pdf pelo APP padrão android nome do arquivo "+nf.toString());
-                    Toast.makeText(getApplicationContext(),"Não foi encontrado nenhum APP para abrir o arquivo", Toast.LENGTH_LONG).show();
-                    //pdfView.fromFile(file).scrollHandle(new DefaultScrollHandle(getApplicationContext())).load();
-                }*/
-
-
-
-            }
-        });
-        dialogSelecaoAbrirPDF.setNegativeButton("APP eletrohelp", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                //pdfView.fromFile(file).scrollHandle(new DefaultScrollHandle(getApplicationContext())).load();
-            }
-        });
-        dialogSelecaoAbrirPDF.show();
-
+        String patch = "storage/emulated/0/Android/data/com.calculodefatordepotencia/files/"+indexManual;
+        File nf = new File(patch);
+        //função para solicitar android um app para abrir o pdf
+        abrirPDF(getApplicationContext(), nf);
     }
 
     private void chamarInterticial(){
@@ -165,7 +93,7 @@ public class ManuaisPdf extends AppCompatActivity{
         }
     }
 
-    //função para solicitar android um app para abrir o pdf
+    //função para solicitar android um app para abrir o pdf com app do sistema
     public void abrirPDF(Context context, File file) {
         Uri uri = FileProvider.getUriForFile(
                 context,
@@ -186,5 +114,14 @@ public class ManuaisPdf extends AppCompatActivity{
         }
     }
 
+    //função para abrir voltar para a pagina inicial
 
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        finish();
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 }
