@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
     String fpDesejado;
     ImageView manuais;
 
+    ImageView imgElo;
+
 
 
     @Override
@@ -65,6 +67,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getBaseContext(), manuais1_0.class);
+                startActivity(intent);
+            }
+        });
+
+        imgElo = findViewById(R.id.imgElo);
+        imgElo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), EloDeTransformador.class);
                 startActivity(intent);
             }
         });

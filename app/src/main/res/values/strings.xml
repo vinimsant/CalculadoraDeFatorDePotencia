@@ -6,6 +6,22 @@
         <item>CV</item>
         <item>HP</item>
     </string-array>
+    <string-array name="tipo_de_transformador">
+        <item>Transformador Trifasico</item>
+        <item>Transformador Monofasico</item>
+    </string-array>
+    <string-array name="tensão_primaria_monofasico">
+        <item>6,5 KV</item>
+        <item>7,9 KV</item>
+        <item>12,7 KV</item>
+        <item>19,9KV</item>
+    </string-array>
+    <string-array name="tensão_primaria_trifasico">
+        <item>11,4 KV</item>
+        <item>13,8 KV</item>
+        <item>22 KV</item>
+        <item>34,5 KV</item>
+    </string-array>
     <string-array name="tipo_de_condutor">
         <item>Condutor de Cobre</item>
         <item>Condutor de Aluminio</item>
