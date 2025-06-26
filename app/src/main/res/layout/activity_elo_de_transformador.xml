@@ -10,22 +10,32 @@
 
     <Spinner
         android:id="@+id/spn_tipo_de_trnasformador"
-        android:layout_width="382dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="15dp"
+        android:background="@drawable/custon_edit_text"
+        android:dropDownWidth="match_parent"
+        android:dropDownVerticalOffset="4dp"
+        android:popupBackground="@drawable/spinner_dropdown_background"
+        android:spinnerMode="dropdown"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView78" />
 
     <Spinner
         android:id="@+id/spn_tensao_primario"
-        android:layout_width="382dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="15dp"
+        android:background="@drawable/custon_edit_text"
+        android:dropDownWidth="match_parent"
+        android:dropDownVerticalOffset="4dp"
+        android:popupBackground="@drawable/spinner_dropdown_background"
+        android:spinnerMode="dropdown"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView79" />
@@ -97,11 +107,16 @@
 
     <Spinner
         android:id="@+id/spn_potencia"
-        android:layout_width="382dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="15dp"
+        android:background="@drawable/custon_edit_text"
+        android:dropDownWidth="match_parent"
+        android:dropDownVerticalOffset="4dp"
+        android:popupBackground="@drawable/spinner_dropdown_background"
+        android:spinnerMode="dropdown"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView80" />

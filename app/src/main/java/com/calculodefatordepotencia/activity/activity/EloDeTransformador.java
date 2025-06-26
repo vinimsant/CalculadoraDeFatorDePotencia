@@ -51,43 +51,43 @@ public class EloDeTransformador extends AppCompatActivity {
 
         //criando um adapter para o spinner potencia monofasico
         ArrayAdapter<CharSequence> adapter_potencia_monofasico = ArrayAdapter.createFromResource(this,
-                R.array.potencia_monofasico, android.R.layout.simple_spinner_item);
+                R.array.potencia_monofasico, R.layout.custom_spinner_item);
 
         //especificar um layout para o spinner
-        adapter_potencia_monofasico.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter_potencia_monofasico.setDropDownViewResource(R.layout.custom_spinner_dropdown_item);
 
         //criando um adapter para o spinner potencia trifasico
         ArrayAdapter<CharSequence> adapter_potencia_trifasico = ArrayAdapter.createFromResource(this,
-                R.array.potencia_trifasico, android.R.layout.simple_spinner_item);
+                R.array.potencia_trifasico, R.layout.custom_spinner_item);
 
         //especificar um layout para o spinner
-        adapter_potencia_trifasico.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter_potencia_trifasico.setDropDownViewResource(R.layout.custom_spinner_dropdown_item);
 
 
         //configurar o spiner tensão primaria
 
         //criando um adapter para o spinner caso o transformador seja monofásico
         ArrayAdapter<CharSequence> adapter_tensao_monofasico = ArrayAdapter.createFromResource(this,
-                R.array.tensão_primaria_monofasico, android.R.layout.simple_spinner_item);
+                R.array.tensão_primaria_monofasico, R.layout.custom_spinner_item);
 
         //especificar um layout para o spinner
-        adapter_tensao_monofasico.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter_tensao_monofasico.setDropDownViewResource(R.layout.custom_spinner_dropdown_item);
 
         //criando um adapter para o spinner caso o transformador seja trifasico
         ArrayAdapter<CharSequence> adapter_tensao_trifasico = ArrayAdapter.createFromResource(this,
-                R.array.tensão_primaria_trifasico, android.R.layout.simple_spinner_item);
+                R.array.tensão_primaria_trifasico, R.layout.custom_spinner_item);
 
         //especificar um layout para o spinner
-        adapter_tensao_trifasico.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter_tensao_trifasico.setDropDownViewResource(R.layout.custom_spinner_dropdown_item);
 
         //configurar o spiner tipo de transformador
 
         //criando um adapter para o spinner
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.tipo_de_transformador, android.R.layout.simple_spinner_item);
+                R.array.tipo_de_transformador, R.layout.custom_spinner_item);
 
         //especificar um layout para o spinner
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        adapter.setDropDownViewResource(R.layout.custom_spinner_dropdown_item);
         //aplicar o adapter ao spinner
         tipoTransformador.setAdapter(adapter);
         //criar ouvinte para a seleção do spner
