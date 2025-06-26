@@ -12,10 +12,9 @@
         android:id="@+id/spn_tipo_de_trnasformador"
         android:layout_width="382dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="30dp"
-        android:layout_marginEnd="30dp"
-        android:background="@drawable/custon_edit_text"
+        android:layout_marginEnd="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView78" />
@@ -24,33 +23,32 @@
         android:id="@+id/spn_tensao_primario"
         android:layout_width="382dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="30dp"
-        android:layout_marginEnd="30dp"
-        android:background="@drawable/custon_edit_text"
+        android:layout_marginEnd="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView79" />
 
     <TextView
         android:id="@+id/textView78"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="45dp"
-        android:text="Tipo de Transformador"
         android:background="@drawable/custon_edit_text"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Tipo de Transformador"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView79"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="30dp"
-        android:text="Tensão do Primário"
         android:background="@drawable/custon_edit_text"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Tensão do Primário"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spn_tipo_de_trnasformador" />
 
@@ -60,9 +58,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:text="Limpar"
+        android:onClick="linpar"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spn_tensao_primario" />
+        app:layout_constraintTop_toBottomOf="@+id/spn_potencia" />
 
     <Button
         android:id="@+id/btn_elo_clacular"
@@ -70,9 +69,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:text="Calcular"
+        android:onClick="calcular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/spn_tensao_primario" />
+        app:layout_constraintTop_toBottomOf="@+id/spn_potencia" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -85,15 +85,35 @@
         android:id="@+id/txt_elo_resultado"
         android:layout_width="250dp"
         android:layout_height="150dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/custon_edit_text_desligado"
         android:gravity="center"
         android:text="O resultado Aparecerá Aqui"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_elo_limpar" />
+
+    <Spinner
+        android:id="@+id/spn_potencia"
+        android:layout_width="382dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView80" />
+
+    <TextView
+        android:id="@+id/textView80"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/custon_edit_text"
+        android:text="Potencia do Transformador"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spn_tensao_primario" />
 </androidx.constraintlayout.widget.ConstraintLayout>

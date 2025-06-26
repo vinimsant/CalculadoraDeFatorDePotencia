@@ -1,39 +1,71 @@
 <resources>
     <string name="app_name">Calculo de Fator de Potencia</string>
+
     <string-array name="potencia_array">
         <item>W</item>
         <item>KW</item>
         <item>CV</item>
         <item>HP</item>
     </string-array>
+
+    <!--array para spiner potencia monofasico-->
+    <string-array name="potencia_monofasico">
+        <item>5 KVA</item>
+        <item>10 KVA</item>
+        <item>15 KVA</item>
+        <item>25 KVA</item>
+    </string-array>
+
+    <!--array para spiner potencia trifasico-->
+    <string-array name="potencia_trifasico">
+        <item>15 KVA</item>
+        <item>30 KVA</item>
+        <item>45 KVA</item>
+        <item>75 KVA</item>
+        <item>112,5 KVA</item>
+        <item>150 KVA</item>
+        <item>225 KVA</item>
+        <item>300 KVA</item>
+        <item>400 KVA</item>
+        <item>500 KVA</item>
+        <item>750 KVA</item>
+        <item>1000 KVA</item>
+    </string-array>
+
     <string-array name="tipo_de_transformador">
         <item>Transformador Trifasico</item>
         <item>Transformador Monofasico</item>
     </string-array>
+
     <string-array name="tensão_primaria_monofasico">
         <item>6,5 KV</item>
         <item>7,9 KV</item>
         <item>12,7 KV</item>
         <item>19,9KV</item>
     </string-array>
+
     <string-array name="tensão_primaria_trifasico">
         <item>11,4 KV</item>
         <item>13,8 KV</item>
         <item>22 KV</item>
         <item>34,5 KV</item>
     </string-array>
+
     <string-array name="tipo_de_condutor">
         <item>Condutor de Cobre</item>
         <item>Condutor de Aluminio</item>
     </string-array>
+
     <string-array name="tipo_de_calculo_de_queda">
         <item>Calcular Bitola do Condutor</item>
         <item>Calcular Queda de Tensão</item>
     </string-array>
+
     <string-array name="sistema_trifasico_ou_monofasico">
         <item>Sistema trifásico</item>
         <item>Sistema monofásico</item>
     </string-array>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="dialogo_dados_moveis">Deseja fazer o download pelos dados móveis?</string>
