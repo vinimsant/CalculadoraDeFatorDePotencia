@@ -8,6 +8,7 @@
         android:fitsSystemWindows="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
     >
 
 
@@ -22,53 +23,50 @@
             android:layout_width="350dp"
             android:layout_height="150dp"
             android:layout_marginTop="60dp"
-            android:background="@drawable/custon_image_button_main"
             android:elevation="10dp"
             android:onClick="ChamFP"
-            android:padding="6dp"
+            android:padding="4dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imgMainManuais"
-            app:srcCompat="@drawable/banco2" />
+            app:srcCompat="@drawable/banco_capacitores" />
 
         <ImageView
             android:id="@+id/imageView5"
             android:layout_width="350dp"
             android:layout_height="150dp"
             android:layout_marginTop="60dp"
-            android:background="@drawable/custon_image_button_main"
             android:onClick="ChamarDeseq"
-            android:padding="6dp"
+            android:padding="4dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView3"
-            app:srcCompat="@drawable/desquilibrio2" />
+            app:srcCompat="@drawable/icone_novo_desequilibrio" />
 
         <ImageView
             android:id="@+id/imageView7"
             android:layout_width="350dp"
             android:layout_height="150dp"
-            android:background="@drawable/custon_image_button_main"
             android:onClick="ChamarQueda"
-            android:padding="6dp"
+            android:padding="4dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView3"
-            app:srcCompat="@drawable/queda2" />
+            app:srcCompat="@drawable/icone_novo_queda_tensao" />
 
         <ImageView
             android:id="@+id/imgMainManuais"
             android:layout_width="350dp"
             android:layout_height="150dp"
             android:layout_marginTop="60dp"
-            android:background="@drawable/custon_image_button_main"
             android:elevation="10dp"
-            android:padding="6dp"
+            android:padding="4dp"
+            android:onClick="ChamarManuais"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/manuais2" />
+            app:srcCompat="@drawable/icone_novo_manual" />
 
         <ImageView
             android:id="@+id/imgElo"
@@ -76,16 +74,15 @@
             android:layout_height="150dp"
             android:layout_marginTop="60dp"
             android:layout_marginBottom="60dp"
-            android:background="@drawable/custon_image_button_main"
             android:elevation="10dp"
             android:onClick="ChamFP"
-            android:padding="6dp"
+            android:padding="4dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.763"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView7"
-            app:srcCompat="@drawable/chave_fusivel_15kv" />
+            app:srcCompat="@drawable/icone_elo_fusivel" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
